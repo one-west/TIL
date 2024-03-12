@@ -8,6 +8,9 @@
 - 나중에 수정하는 경우가 최대한 없도록 작성하자
 - 출처 및 참고사항은 필히 명시한다.
 
+# Notion Link
+- [https://www.notion.so/37e995a6ae9e49b5b06004d93cb821eb](https://www.notion.so/37e995a6ae9e49b5b06004d93cb821eb)
+
 # 분류
 
 ### Java
