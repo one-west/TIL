@@ -22,5 +22,5 @@
 ### Web
 - Comming Soon
 ### Python
-- [Python기본문법](https://github.com/one-west/TIL/blob/26dc78cd00c14f4e07893b39bd1fc0afdf675f5e/Python/python%20%EA%B8%B0%EB%B3%B8%EB%AC%B8%EB%B2%95.md)
+- [Python기본문법](https://github.com/one-west/TIL/blob/main/Python/python%20%EA%B8%B0%EB%B3%B8%EB%AC%B8%EB%B2%95.md)
 - [Python 컬렉션](https://github.com/one-west/TIL/blob/main/Python/Python%20%EC%BB%AC%EB%A0%89%EC%85%98(Collection).md)
