@@ -22,8 +22,8 @@
 - Comming Soon
 
 ### Web
-- [Flex Guide](https://github.com/one-west/TIL/blob/main/CSS/Flex%20Guide.md)
+- [[CSS3] Flex Guide](https://github.com/one-west/TIL/blob/main/CSS/Flex%20Guide.md)
 
 ### Python
-- [Python기본문법](https://github.com/one-west/TIL/blob/main/Python/python%20%EA%B8%B0%EB%B3%B8%EB%AC%B8%EB%B2%95.md)
+- [Python 기본문법](https://github.com/one-west/TIL/blob/main/Python/python%20%EA%B8%B0%EB%B3%B8%EB%AC%B8%EB%B2%95.md)
 - [Python 컬렉션](https://github.com/one-west/TIL/blob/main/Python/Python%20%EC%BB%AC%EB%A0%89%EC%85%98(Collection).md)
