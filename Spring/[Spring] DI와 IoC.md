@@ -6,6 +6,100 @@
 A 객체가 B 객체를 이용한다는 것은 A객체가 B객체에 의존한다.
 
 ![DI](https://images.velog.io/images/gillog/post/08489bda-549e-4dae-851b-8ae1734bf85e/21373937580AEF9B37.jpg)
+# 계산기 프로그램으로 DI 방식 이해
+
+### MyCalculator.java
+
+```java
+public class MyCalculator {
+
+    public void calAdd(int fNum, int sNum, CalAdd calAdd) { // CalAdd 객체 주입
+        int value = calAdd.doOperation(fNum, sNum);
+        System.out.println("result : "+ value);
+    }
+    public void calSub(int fNum, int sNum, CalSub calSub) { // CalSub 객체 주입
+        int value = calSub.doOperation(fNum, sNum);
+        System.out.println("result : " + value);
+    }
+
+    public void calMul(int fNum, int sNum, CalMul calMul) { // CalMul 객체 주입
+        int value = calMul.doOperation(fNum, sNum);
+        System.out.println("result : " + value);
+    }
+
+    public void calDiv(int fNum, int sNum, CalDiv calDiv) { // CalDiv 객체 주입
+        int value = calDiv.doOperation(fNum, sNum);
+        System.out.println("result : " + value);
+    }
+}
+
+```
+
+### MainClass.java
+
+```java
+public class MainClass {
+
+    public static void main(String[] args) {
+
+        MyCalculator calculator = new MyCalculator();
+        calculator.calAdd(10,5, new CalAdd()); // 객체 주입
+        calculator.calSub(10,5, new CalSub());
+        calculator.calMul(10,5, new CalMul());
+        calculator.calDiv(10,5, new CalDiv());
+    }
+
+}
+
+```
+
+### 인터페이스를 활용
+
+```java
+public class MyCalculator {
+
+//    public void calAdd(int fNum, int sNum, CalAdd calAdd) {
+//        int value = calAdd.doOperation(fNum, sNum);
+//        System.out.println("result : "+ value);
+//    }
+//    public void calSub(int fNum, int sNum, CalSub calSub) {
+//        int value = calSub.doOperation(fNum, sNum);
+//        System.out.println("result : " + value);
+//    }
+//
+//    public void calMul(int fNum, int sNum, CalMul calMul) {
+//        int value = calMul.doOperation(fNum, sNum);
+//        System.out.println("result : " + value);
+//    }
+//
+//    public void calDiv(int fNum, int sNum, CalDiv calDiv) {
+//        int value = calDiv.doOperation(fNum, sNum);
+//        System.out.println("result : " + value);
+//    }
+
+    public void calculator(int fNum, int sNum, ICalculator calculator) {
+        int value = calculator.doOperation(fNum, sNum);
+        System.out.println("result : "+ value);
+    }
+}
+```
+
+```java
+public class MainClass {
+
+    public static void main(String[] args) {
+
+        MyCalculator calculator = new MyCalculator();
+        calculator.calculator(10,5, new CalAdd());
+        calculator.calculator(10,5, new CalSub());
+        calculator.calculator(10,5, new CalMul());
+        calculator.calculator(10,5, new CalDiv());
+    }
+
+}
+```
+
+📌 필요한 객체를 외부에서 주입한다 → 프로그램의 유연성을 확보하고 객체 간의 결합도를 낮출 수 있게 해준다.
 
 # IoC 개념
 
