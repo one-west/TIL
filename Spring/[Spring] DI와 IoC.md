@@ -67,24 +67,6 @@ public class CalDiv implements ICalculator{
 }
 ```
 
-### MainClass.java
-
-```java
-public class MainClass {
-
-    public static void main(String[] args) {
-
-        MyCalculator calculator = new MyCalculator();
-        calculator.calAdd(10,5, new CalAdd()); // 객체 주입
-        calculator.calSub(10,5, new CalSub());
-        calculator.calMul(10,5, new CalMul());
-        calculator.calDiv(10,5, new CalDiv());
-    }
-
-}
-
-```
-
 ### 인터페이스를 활용
 
 ```java
@@ -116,16 +98,18 @@ public class MyCalculator {
 }
 ```
 
+### MainClass.java
+
 ```java
 public class MainClass {
 
     public static void main(String[] args) {
 
         MyCalculator calculator = new MyCalculator();
-        calculator.calculator(10,5, new CalAdd());
-        calculator.calculator(10,5, new CalSub());
-        calculator.calculator(10,5, new CalMul());
-        calculator.calculator(10,5, new CalDiv());
+        calculator.calAdd(10,5, new CalAdd()); // 객체 주입
+        calculator.calSub(10,5, new CalSub());
+        calculator.calMul(10,5, new CalMul());
+        calculator.calDiv(10,5, new CalDiv());
     }
 
 }
