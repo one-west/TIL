@@ -9,30 +9,62 @@ A 객체가 B 객체를 이용한다는 것은 A객체가 B객체에 의존한�
 # 계산기 프로그램으로 DI 방식 이해
 
 ### MyCalculator.java
+- ICalculator.java
 
 ```java
-public class MyCalculator {
+public interface ICalculator {
 
-    public void calAdd(int fNum, int sNum, CalAdd calAdd) { // CalAdd 객체 주입
-        int value = calAdd.doOperation(fNum, sNum);
-        System.out.println("result : "+ value);
-    }
-    public void calSub(int fNum, int sNum, CalSub calSub) { // CalSub 객체 주입
-        int value = calSub.doOperation(fNum, sNum);
-        System.out.println("result : " + value);
-    }
+    public int doOperation(int firstNum, int secondNum);
 
-    public void calMul(int fNum, int sNum, CalMul calMul) { // CalMul 객체 주입
-        int value = calMul.doOperation(fNum, sNum);
-        System.out.println("result : " + value);
-    }
+}
+```
 
-    public void calDiv(int fNum, int sNum, CalDiv calDiv) { // CalDiv 객체 주입
-        int value = calDiv.doOperation(fNum, sNum);
-        System.out.println("result : " + value);
+- CalAdd.java
+
+```java
+public class CalAdd implements ICalculator{
+
+    @Override
+    public int doOperation(int firstNum, int secondNum) {
+        return firstNum + secondNum;
     }
 }
+```
 
+- CalSub.java
+
+```java
+public class CalSub implements ICalculator{
+
+    @Override
+    public int doOperation(int firstNum, int secondNum) {
+        return firstNum - secondNum;
+    }
+}
+```
+
+- CalMul.java
+
+```java
+public class CalMul implements ICalculator{
+
+    @Override
+    public int doOperation(int firstNum, int secondNum) {
+        return firstNum * secondNum;
+    }
+}
+```
+
+- CalDiv.java
+
+```java
+public class CalDiv implements ICalculator{
+
+    @Override
+    public int doOperation(int firstNum, int secondNum) {
+        return firstNum / secondNum;
+    }
+}
 ```
 
 ### MainClass.java
