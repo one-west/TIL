@@ -125,6 +125,49 @@ public class MainClass {
 
 ![IoC](https://velog.velcdn.com/images%2Fgillog%2Fpost%2F41f2eb24-fce2-4b7e-b9ac-d5c3ce97d213%2F22535642580C4AF12C.jpg)
 
+# 계산기 프로그램으로 IoC방식 이해
+
+## CalAssembler 클래스
+
+프로그램 실행에 필요한 객체를 생성하는 클래스 코드 작성
+
+```java
+public class CalAssembler {
+
+    MyCalculator calculator;
+    CalAdd calAdd;
+    CalSub calSub;
+    CalMul calMul;
+    CalDiv calDiv;
+
+    public CalAssembler() {
+        calculator = new MyCalculator();
+        calAdd = new CalAdd();
+        calSub = new CalSub();
+        calMul = new CalMul();
+        calDiv = new CalDiv();
+    }
+
+    public void assemble() {
+        calculator.calculator(10, 5, calAdd);
+        calculator.calculator(10, 5, calSub);
+        calculator.calculator(10, 5, calMul);
+        calculator.calculator(10, 5, calDiv);
+    }
+}
+
+```
+
+```java
+public class MainClass {
+
+    public static void main(String[] args) {
+        new CalAssembler().assemble();
+    }
+
+}
+```
+
 - 객체를 생성하고 조립하는 특별한 공간을 스프링에서는 IoC컨테이너라고 한다.
 - IoC 컨테이너의 객체를 스프링에서는 `빈(Bean)` 이라고 한다.  
 
