@@ -51,3 +51,7 @@ Spring 즉 SpringFramework 는 자바기반의 애플리케이션 프레임워�
 - starter을 통한 dependency 자동화 :  과거 Spring framework에서는 각각의 dependency들의 호환되는 버전을 일일이 맞추어 주어야 했고, 때문에 하나의 버전을 올리고자 하면 다른 dependeny에 까지 영향을 미쳐 version관리에 어려움이 많았다. 하지만, 이제 starter가 대부분의 dependency를 관리해주기 때문에 이러한 걱정을 많이 덜게 되었다.
 - XML설정을 하지 않아도 된다.
 - jar file을 이용해 자바 옵션만으로 손쉽게 배포가 가능하다
+
+### 자료출처
+-
+-
