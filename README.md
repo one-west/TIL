@@ -18,7 +18,7 @@
 - [Spring이란?](https://github.com/one-west/TIL/blob/main/Spring/%5BSpring%5D%20%EC%9D%B4%EB%9E%80%3F.md)
 - [Spring DI와 IoC](https://github.com/one-west/TIL/blob/main/Spring/%5BSpring%5D%20DI%EC%99%80%20IoC.md)
 
-### HTML\CSS
+### HTML-CSS
 - [[CSS3] Flex Guide](https://github.com/one-west/TIL/blob/main/CSS/Flex%20Guide.md)
   
 ### JavaScript
