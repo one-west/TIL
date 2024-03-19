@@ -28,7 +28,7 @@
 - Comming Soon
 
 ### Web
-- Comming Soon
+- [WWW이란?](https://github.com/one-west/TIL/blob/main/Web/World_Wide_Web.md)
 
 ### Python
 - [Python 기본문법](https://github.com/one-west/TIL/blob/main/Python/python%20%EA%B8%B0%EB%B3%B8%EB%AC%B8%EB%B2%95.md)
