@@ -53,5 +53,5 @@ Spring 즉 SpringFramework 는 자바기반의 애플리케이션 프레임워�
 - jar file을 이용해 자바 옵션만으로 손쉽게 배포가 가능하다
 
 ### 자료출처
--
--
+- https://spring.io/why-spring
+- https://www.codestates.com/blog/content/%EC%8A%A4%ED%94%84%EB%A7%81-%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8
