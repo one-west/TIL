@@ -18,11 +18,17 @@
 - [Spring이란?](https://github.com/one-west/TIL/blob/main/Spring/%5BSpring%5D%20%EC%9D%B4%EB%9E%80%3F.md)
 - [Spring DI와 IoC](https://github.com/one-west/TIL/blob/main/Spring/%5BSpring%5D%20DI%EC%99%80%20IoC.md)
 
+### HTML/CSS
+- [[CSS3] Flex Guide](https://github.com/one-west/TIL/blob/main/CSS/Flex%20Guide.md)
+  
+### JavaScript
+-
+
 ### React
 - Comming Soon
 
 ### Web
-- [[CSS3] Flex Guide](https://github.com/one-west/TIL/blob/main/CSS/Flex%20Guide.md)
+- Comming Soon
 
 ### Python
 - [Python 기본문법](https://github.com/one-west/TIL/blob/main/Python/python%20%EA%B8%B0%EB%B3%B8%EB%AC%B8%EB%B2%95.md)
