@@ -2,7 +2,7 @@
 ![Date](https://img.shields.io/badge/Start-2024.03.06-red) ![Update](https://img.shields.io/badge/update-2024.03.22-grean)
 - 필자의 습관적인 나태함을 바로잡고자 부지런히 학습한 내용이나 개발관련 경험들을 기록하고자 한다.
 - 기존에 이미 공부한 내용은 복습한다 생각하고 천천히 작성한다.  
-- [Notion링크](https://www.notion.so/37e995a6ae9e49b5b06004d93cb821eb)
+- [Notion 공부자료 및 필기노트](https://www.notion.so/37e995a6ae9e49b5b06004d93cb821eb)
 
 # 작성규칙
 - 나중에 수정하는 경우가 최대한 없도록 작성하자.
@@ -33,3 +33,6 @@
 ### Python
 - [Python 기본문법](https://github.com/one-west/TIL/blob/main/Python/python%20%EA%B8%B0%EB%B3%B8%EB%AC%B8%EB%B2%95.md)
 - [Python 컬렉션](https://github.com/one-west/TIL/blob/main/Python/Python%20%EC%BB%AC%EB%A0%89%EC%85%98(Collection).md)
+
+### Design Pattern
+- [Singleton pattern](https://github.com/one-west/TIL/blob/main/Design%20Pattern/Singleton%20pattern.md)
