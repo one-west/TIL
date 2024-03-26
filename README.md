@@ -1,5 +1,5 @@
 # 나의 Today I Learned
-![Date](https://img.shields.io/badge/Start-2024.03.06-red) ![Update](https://img.shields.io/badge/update-2024.03.24-grean)
+![Date](https://img.shields.io/badge/Start-2024.03.06-red) ![Update](https://img.shields.io/badge/update-2024.03.26-grean)
 - 필자의 습관적인 나태함을 바로잡고자 부지런히 학습한 내용이나 개발관련 경험들을 기록하고자 한다.
 - 기존에 이미 공부한 내용은 복습한다 생각하고 천천히 작성한다.  
 - [Notion 공부자료 및 필기노트](https://www.notion.so/37e995a6ae9e49b5b06004d93cb821eb)
@@ -12,7 +12,7 @@
 # 분류
 
 ### Java
-- Comming Soon
+- [Java IDE 설치](https://github.com/one-west/TIL/blob/main/Java/Java%20IDE%20install%20%EB%B0%A9%EB%B2%95.md)
 
 ### Spring
 - [Spring이란?](https://github.com/one-west/TIL/blob/main/Spring/%5BSpring%5D%20%EC%9D%B4%EB%9E%80%3F.md)
