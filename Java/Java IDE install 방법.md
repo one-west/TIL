@@ -35,8 +35,8 @@ javac 명령어로 컴파일된 바이트 코드 파일을 JDK가 설치된 어�
     
     https://www.oracle.com/kr/java/technologies/downloads/#java11
     
-    1. Oracle JDK설치파일을다운로드하기위해오라클웹사이트([https://www.oracle.com](https://www.oracle.com/)) 에접속합니다. 상단에서[Products] 메뉴를클릭하고[Software]의UJava) 를 클릭합니다.
-    2. [Oracle Java ]화면이나타나면우측상단에서(Download Java]버튼을클릭합니다.
+    1. Oracle JDK 설치파일을 다운로드 하기 위해 오라클 웹 사이트([https://www.oracle.com](https://www.oracle.com/))에 접속합니다. 상단에서[Products] 메뉴를 클릭하고[Software]의UJava)를 클릭합니다.
+    2. [Oracle Java ]화면이 나타나면 우측상단에서(Download Java]버튼을 클릭합니다.
     3. [JavaSEDownloads] 화면에서 [Java SE 11 (LTS)] > Oracle JDK > JDK Download
 
     ![JDK버전표기](https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTVm3Tm7TwBYyheSACBuQjw4c2BOrppVecldw6_QrF6y86xQ5Bs)
