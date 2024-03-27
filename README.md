@@ -24,7 +24,7 @@
   
 ### JavaScript
 - [JavaScript란?](https://github.com/one-west/TIL/blob/main/JavaScript/JS%EB%9E%80%3F.md)
-- [JavaScript기본문법](https://github.com/one-west/TIL/blob/main/JavaScript/JS%20%EA%B8%B0%EB%B3%B8%EB%AC%B8%EB%B2%95.md)
+- [JavaScript기본문법](https://github.com/one-west/TIL/blob/main/JavaScript/JS%EA%B8%B0%EB%B3%B8%EB%AC%B8%EB%B2%95.md)
 
 ### React
 - Comming Soon
