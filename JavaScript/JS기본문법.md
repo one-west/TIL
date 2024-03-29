@@ -508,13 +508,174 @@ for (시작; 조건식; 종료식) {
     '한서'
     ```
 - 참조와 복사
+  ```js
+  const a = { name: 'onewest' } // 변수 a가 객체를 가리킴
+  const b = a; // 변수 b가 변수 a를 가리킴
+  ```
+  -> 이럴 때 **변수 a와 b가 같은 객체를 참조하고 있다** 또는 **변수 a와 b 그리고 객체 간에 참조 관계가 있다**고 표현
+  - 객체가 아닌 값을 대입한 경우: 참조 관계가 생기지 않는 상황
+  - 복사(copy): 어떤 값을 변수에 대입할 때 기존 값과 참조 관계가 끊기는 것
+  - 객체가 아닌 값은 애초부터 참조 관계가 없으므로 그냥 복사만 됨
+  - 얕은 복사(shallow copy): 외부 객체만 복사되고 내부 객체는 참조 관계를 유지하는 복사
+  - 얕은 복사 시...연산자(스프레드 문법, spread syntax) 사용
+  - 깊은 복사(deep copy): 내부 객체까지 참조 관계가 끊기면서 복사되는 것
+
 - 구조분해 할당
+  - 객체의 속성 이름과 대입하는 변수명이 같을 때 다음과 같이 줄여서 쓸 수 있음
+    ```js
+    const person = { name: '원웨스트' }
+    const name = person.name
+    const { name } = person // 앞 줄과 같은 의미
+    name; // '원웨스트'
+    ```
+    
 - 유사 배열 객체
+  - 배열 모양을 한 객체
+  - 배열이 아니므로 배열 메서드를 사용할 수 없음
 
 ### 함수를 인수로 받는 배열 메서드
+- forEach()와 map()
+  - forEach(): for 문을 사용하지 않고도 반복문 수행 가능
+    ```js
+    배열.forEach(함수);
+    ```
+    
+  - forEach()메서드의 인수
+    ```js
+    const arr = [1, 5, 4, 2];
+    arr.forEach((number, index) => {
+      console.log(number, index);
+    });
+    ```
+
+  - 콜백 함수(callback function): 다른 메서드에 인수로 넣었을 때 실행되는 함수
+  - 메서드에 콜백 함수 전달 원리
+  - map(): 배열 요소들을 일대일로 짝지어서 다른 값으로 변환해 새로운 배열을 반환
+    ```js
+    배열.map(콜백 함수);
+    ```
+  - map()메서드의 인수
+    ```js
+    // [1, 1, 1, 1, 1]
+    map((v, i) => i + 1)
+    // [1, 2, 3, 4, 5]
+    ```
+- find(), findIndex(), filter()
+  - find(): 콜백 함수의 반환값이 true인 요소를 찾는 메서드
+  - findIndex(): 찾은 요소의 인덱스를 반환하고, 찾지 못했다면 -1을 반환하는 메서드
+  - filter(): 콜백 함수의 반환값이 true가 되는 모든 요소를 찾아 결과를 배열로 반환하는 메서드
+    ```js
+    배열.find(콜백 함수);
+    배열.findIndex(콜백 함수);
+    배열.filter(콜백 함수);
+    ```
+
+- sort()
+  - 비교 함수의 반환값에 따라 배열을 정렬하는 메서드
+    ```js
+    배열.sort(비교 함수);
+    ```
+    
+  - 비교 함수의 형식
+    ```js
+    (a, b) => 반환값
+    ```
+
+- reduce()
+  - 배열의 있는 반복 메서드의 일종
+  - 배열의 요소들을 하나의 값으로 합침
+  - 초기 값이 없으면 배열의 첫 번째 요소가 초기 값이 됨
+    ```js
+    배열.reduce(누적 값, 현재 값) => {
+      return 새로운 누적 값;
+    }, 초기 값);
+    ```
+
+- every()와 some()
+  - every(): 하나라도 조건을 만족하지 않는 요소(조건 함수가 false를 반환)를 찾으면 반복 중단
+  - some(): 하나라도 조건을 만족하는 요소(조건 함수가 true를 반환)를 찾으면 반복 중단
 
 ## 클래스
+- 클래스(class): 객체를 생성하기 위한 템플릿(서식)
 
+### 함수로 객체를 생성하는 방법
+- 공장 함수(factory function): 객체를 반환하는 함수
+- 새로운 객체가 필요하면 그때마다 함수 호출
+  ```js
+  function createMonster(name, hp, att) {
+    return { name, hp, att };
+  }
+  const monster1 = createMonster('슬라임', 25, 10);
+  const monster2 = createMonster('슬라임', 26, 9);
+  const monster3 = createMonster('슬라임', 25, 11);
+  ```
+
+- 생성자 함수(constructor function): new를 붙여 호출하는 함수
+- new를 붙여 호출할 때마다 새로운 객체 생성
+  ```js
+  function Monster(name, hp, att) {
+    this.name = name;
+    this.hp = hp;
+    this.att = att;
+  }
+  const monster1 = new Monster('슬라임', 25, 10);
+  const monster2 = new Monster('슬라임', 26, 9);
+  const monster3 = new Monster('슬라임', 25, 11);
+  ```
+
+- 프로토타입(prototype): 생성자 함수로 생성한 객체가 공유하는 속성
+- 생성자 함수는 prototype 속성 안에 추가해야 메서드를 재사용할 수 있음
+  ```js
+  function Monster(name, hp, att) {
+    this.name = name;
+    this.hp = hp;
+    this.att = att;
+  }
+  Monster.prototype.attack = function(monster) {
+    monster.hp -= this.att;
+  };
+  const monster1 = new Monster('슬라임', 25, 10);
+  const monster2 = new Monster('슬라임', 26, 9);
+  monster1.attack === monster2.attack;
+  ```
+
+### this 이해하기
+- this: 상황에 따라 값이 달라짐(기본으로 window 객체를 가리킴)
+  - 객체 메서드로 this를 사용하면 this는 해당 객체를 가르킴
+  - 함수의 this는 bind() 메서드를 사용해 값을 바꿀 수 있음
+  - 생성자 함수를 호출할 때 new를 붙이면 this는 생성자 함수가 새로 생성하는 객체가 됨
+
+### 클랙스로 객체를 생성하는 방법
+- class 예약어로 클래스 선언
+- 생성자 함수 이름을 클래스 이름으로 넣음
+- 매개변수를 포함한 기존 함수의 코드는 constructor() 메서드 안에 넣음
+  ```js
+  class 클래스 이름 {
+    constructor (매개변수1, 매개변수2, ...) {
+      // 생성자 함수 내용
+    }
+  }
+  ```
+
+### 클래스 상속하기
+- 상속: 부모 클래스에서 공통부분을 가져와 사용하는 것
+- 부모 클래스: 복수의 클래스에서 공통되는 부분만 추려 만든 클래스
+- 자식 클래스: 부모 클래스에서 공통부분을 가져와 사용하는(상속받는) 클래스
+  ```js
+  class 자식 클래스 extends 부모 클래스 {
+    constructor(매개변수1, 매개변수2, ...) {
+      super(인수1, 인수2, ...); // 부모 클래스의 생성자 호출
+      this.매개변수 = 값; // 자식 클래스만의 속성
+    }
+  }
+  메서드() { // 부모 클래스의 메서드만 호출하면 생략 가능
+    super.메서드(); // 부모 클래스의 메서드 호출
+    // 부모 클래스 메서드 호출 이후의 동작
+  }
+  메서드(매개변수1, 매개변수2, ...) {
+    // 자식 클래스만의 동작
+  }
+  ```
 
 ### 자료출처
 - https://ko.javascript.info/
