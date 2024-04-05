@@ -19,7 +19,7 @@
 - [Spring DI와 IoC](https://github.com/one-west/TIL/blob/main/Spring/%5BSpring%5D%20DI%EC%99%80%20IoC.md)
 - [Maven build](https://github.com/one-west/TIL/blob/main/Spring/%5BSpring%5D%20Maven%20build.md)
 - [Sprnig Annotation](https://github.com/one-west/TIL/blob/main/Spring/%5BSpring%5D%20Annotation_%EC%9D%B4%EB%9E%80%3F.md)
-- [ComponentScan에 대하여](https://github.com/one-west/TIL/blob/main/Spring/%5BSpring%5D%20ComponentScan.md)
+- [ComponentScan](https://github.com/one-west/TIL/blob/main/Spring/%5BSpring%5D%20ComponentScan.md)
 - [Spring AOP](https://github.com/one-west/TIL/blob/main/Spring/%5BSpring%5D%20AOP.md)
 
 ### HTML-CSS
