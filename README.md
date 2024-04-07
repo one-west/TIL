@@ -2,7 +2,6 @@
 ![Date](https://img.shields.io/badge/Start-2024.03.06-red) ![Update](https://img.shields.io/badge/update-2024.04.05-grean)
 - 필자의 습관적인 나태함을 바로잡고자 부지런히 학습한 내용이나 개발관련 경험들을 기록하고자 한다.
 - 기존에 이미 공부한 내용은 복습한다 생각하고 천천히 작성한다.  
-- [Notion 공부자료 및 필기노트](https://www.notion.so/37e995a6ae9e49b5b06004d93cb821eb)
 
 # 작성규칙
 - 나중에 수정하는 경우가 최대한 없도록 작성하자.
