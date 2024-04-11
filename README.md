@@ -43,5 +43,5 @@
 ### Design Pattern
 - [Singleton pattern](https://github.com/one-west/TIL/blob/main/Design%20Pattern/Singleton%20pattern.md)
 
-### 정보처리산업기사
+### Certification
 - Comming Soon
