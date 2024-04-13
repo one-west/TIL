@@ -59,6 +59,8 @@
   
 - mysql-connector-java : MySQL 연결에 필요한 JDBC 드라이버 제공
 
+<br>
+
 ※ **커넥션풀(Connection Pool)** 이란?  
 
 - JDBC API를 사용하여 데이터베이스와 연결하기 위해 Connection 객체를 생성하는 작업은 굉장히 무거운 작업이다.
