@@ -1,7 +1,8 @@
 # Spring-MVC 시작하기
 
-[실습코드](##1.-프로젝트-구조)
-
+1. [실습시작](##1.-프로젝트-구조)
+2. [스프링 MVC의 핵심 요소](##Spring-MVC-핵심-구성-요소)
+5. 
 ## 1. 프로젝트 구조
 
 - src/main/java
@@ -193,6 +194,8 @@ cmd > `netstat -nao | findstr 8080`
 
 에서 해당 PID 확인 후 작업관리자에서 PID 작업 종료
 
+<br>
+
 ## Spring MVC 핵심 구성 요소
 
 ### DispatcherServlet
@@ -229,3 +232,128 @@ cmd > `netstat -nao | findstr 8080`
 ### View
 
 컨트롤러의 처리 결과 화면을 생성. JSP 또는 템플릿 파일등을 뷰로 사용
+
+### 동작 과정
+
+1. 웹 브라우저로 부터 요청들어오면 
+2. DispatcherServlet 은 그 요청을 처리하기 위한 컨트롤러 객체를 검색
+	- 이때 DispatcherServlet은 직접 컨트롤러 검색하지 않고 HandlerMapping 이라는 빈 객체에게 컨트롤러 검색을 요청
+
+3. HandlerMapping은 클라이언트의 요청 경로를 이용해 이를 처리할 컨트롤러 빈 객체를 DispatcherServlet에 전달.
+	-  → `/hello` 라는 요청 경로이면 등록된 컨트롤러 빈 중에 `/hello` 요청을 처리할 컨트롤러를 리턴
+
+4. DispatcherServlet은 HanlderMapping 이 찾아준 컨트롤러 객체를 처리할 수 있는 HandlerAdpater 빈에게 요청 처리를 위임. 
+5. HandlerAdapter는 컨트롤러의 알맞은 메서드를 호출해서 요청을 처리
+6. 그 결과를 HandlerAdapter 에 리턴
+7. HandlerAdpter는 비즈니스 로직 처리 결과를 (리턴받은) ModelAndView라는 객체로 변환해서 DispatcherServlet 에 리턴한다.
+8. DispatcherServlet은 리턴 받은 ModelAndView 객체로 결과를 보여줄 뷰를 찾기 위해 ViewResolver 라는 빈 객체를 사용한다.
+9. 컨트롤러가 리턴한 ModelAndView 객체는 뷰 이름을 담고 있는데 ViewResolver는 이 뷰 이름에 해당하는 View 객체를 찾거나 생성해서 리턴한다.
+	- →응답을 생성하기 위해 JSP를 사용하는 ViewResolver는 매번 새로운 View객체를 생성해서 리턴한다.
+
+### Controller와 Handler
+
+- Controller : 클라이언트의 요청을 실제로 처리
+- DispatcherServlet : 요청을 전달받는 창구 역할
+- Handler: 웹 요청을 실체하는 객체를 핸들러라고 표현. @Controller 적용 객체나 Controller 인터페이스를 구현한 객체는 모두 해들러가 된다.
+- HandlerMapping: 특정 요청 경로를 처리해주는 핸들러를 찾아주는 객체
+- HandlerAdapter : DispaterServlet은 핸들러 객체의 실제 타입에 상관없이 실행 결과를 ModelAndView라는 타입으로만 받을 수 있으면 된다. 그런데 핸들러 실제 구현 타입에 따라 String 등을 리턴하는 객체도 있기 때문에 핸들러 처리를 ModelAndView로 변환해주는 객체가 필요하며 HandlerAdapter가 이 변환을 처리
+
+<br>
+
+## DispatcherServlet과 스프링 컨테이너
+
+HandlerMapping, HandlerAdapter, Controller, ViewResolver 등의 빈은 DispatcherServlet이 생성한 스프링 컨테이너에서 구한다 → 설정파일에 이들 빈에 대한 정보가 포함되어있어야 한다.
+
+<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbdLd0W%2Fbtqwr4rgWcL%2Fk2Gye3hx5D8MxlpBpoqk90%2Fimg.png" align="center" >
+
+### @Controller를 위한 HandlerMapping과 HandlerAdapter
+
+@Controller 객체는 DispatcherServlet 입장에서 보면 한 종류의 핸들러 객체이다.
+
+HandlerMapping과 HandlerAdapter를 사용하므로 알맞은 빈이 스프링 설정에 등록되어 있어야 한다.
+
+@EnableWebMvc 태그가 빈으로 추가해주는 클래스 중에는 @Contoller 타입의 핸들러 객체를 처리하기 위해 아래 두 클래스도 포함되어있다.
+
+- org.springframework.web.sevlet.mvc.method.annotation.RequestMappingHandlerMapping
+- org.springframework.web.sevlet.mvc.method.annotation.RequestMappingHanlderAdapter
+
+### webMvcConfigurer 인터페이스
+
+@EnableWebMvc 어노테이션을 사용하면 WebConfigurer 타입인 빈 객체의 메서드를 호출하여 MVC 설정을 추가한다.  기본 구현은 모두 빈 구현으로 재정의가 필요한 메서드만 구현하면된다.
+
+- configureViewResolver() : 뷰 관련 설정
+
+```java
+@Configurable
+@EnableWebMvc
+public class MvcConfig implements WebMvcConfigurer {
+
+    @Override
+    public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
+        configurer.enable();
+    }
+
+    @Override
+    public void configureViewResolvers(ViewResolverRegistry viewResolverRegistry) {
+        viewResolverRegistry.jsp("/WEB-INF/view/", ".jsp");
+    }
+}
+```
+
+### JSP를 위한 ViewResolver
+
+configureViewResolvers() 의 viewResolverRegistry 를 이요하면 다음과 같이 빈으로 등록된다.
+
+```java
+@Bean
+public ViewResolver viewResolver() {
+	InternalResourceViewResolvedr vr = new InternalResourceViewResolver();
+	vr.setPrefix("/WEB-INF/view/");
+	vr.setSurffix(".jsp");
+	return vr;
+}
+```
+
+DispatcherServlet 이 리턴한 ModelAndView 객체 : Map 형식으로 전달된다.
+
+```java
+@GetMapping("/hello")
+    public String hello(Model model, @RequestParam(value="name", required = false) String name) {
+        System.out.println("Hello Controller >>> ");
+        model.addAttribute("greeting", "안녕하세요,"+name);
+        return "hello";
+    }
+```
+
+greeting 키를 갖는 Map객체를 View 에 전달.
+
+```html
+<%@ page contentType="text/html; charset=UTF-8" %>
+인사말 :: ${greeting}
+```
+
+### 디폴트 핸들러 와 HandlerMapping 우선순위
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/9b26350c-aa9b-4c90-88a3-2b752d5d66dd/d0ad6ca8-5f36-4426-95b0-9e7367e038ed/Untitled.png)
+
+매핑경로가 `/` 인 경우 `.jsp` 로 끝나는 요청을 제외한 모든 요청을 DispatcherServlet 이 처리한다.
+
+@EnableWebMvc 가 등록하는 HandlerMapping 은 @Controller 어노테이션을 적용한 빈 객체가 처리할 수 있는 요청 경로만 대응할 수 있다.
+
+→ `/index.html` 등과 같은 요청을 처리할 수 있는 컨트롤러 객체를 찾지 못해 404 응답을 전송한다.
+
+이러한 경로를 처리하기 위한 컨트롤러 객체를 직접 구현할 수 도 있지만, 그보다는 WebMvcConfigurer의 configureDefaultServletHandlring() 메소드를 사용하는 것이 편리하다.
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/9b26350c-aa9b-4c90-88a3-2b752d5d66dd/bd0362ff-1e1b-4128-ad23-b5804aa6822e/Untitled.png)
+
+DefaultServeltHandlerConfigurer#enable() 는 아래 두 객체를 추가한다.
+
+- DefaultServletHttpRequestHandler : 클라이언트의 모든 요청을 WAS가 제공하는 디폴트 서블릿에 전달한다.
+- SimpleUrlHanlderMapping : 모든 경로 `/**` 를 DefaultServletHttpRequestHandler를 이용해서 처리하도록 설정
+
+**우선순위**
+
+1. RequestMappingHandlerMapping을 사용해 요청을 처리할 핸들러를 검색 : 존재하면 해당 컨트롤러를 이용해서 요청을 처리
+2. 존재하지 않으면 SimpleUrlHandlerMapping을 사용해 핸들러 검색
+    1. DefaultServeltHandlerConfigurer#enable() 메서드가 등록한 SimpleUrlHanlderMapping에 대해 DefaultServletHttpRequestHanlder 를 리턴
+    2. DefaultServletHttpRequestHanlder 는 디폴트 서블릿에 처리를 위임
