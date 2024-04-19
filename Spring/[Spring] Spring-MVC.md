@@ -1,13 +1,13 @@
 # Spring-MVC 시작하기
 
 - [Spring-MVC 시작하기](#Spring-MVC-시작하기)
-	- [프로젝트 구조](#1.-프로젝트-구조)
-	- [Tomcat9](#2.-Tomcat9)
-	- [설정하기](#3.-설정하기)
-		- [MvcConfig](#3-1.-MvcConfig)
-		- [web.xml](#3-2.-web.xml)
-  		- [Controller 작성](#3-3.-Controller-작성)
-      	- [view 작성](#3-4.-view-작성)
+	- [프로젝트 구조](#프로젝트-구조)
+	- [Tomcat9](#Tomcat9)
+	- [설정하기](#설정하기)
+		- [MvcConfig](#MvcConfig)
+		- [web.xml](#web.xml)
+  		- [Controller 작성](#Controller-작성)
+      	- [view 작성](#view-작성)
 
 - [Spring-MVC 동작방식](#Spring-MVC-동작방식)
 	- [스프링 MVC의 핵심 요소](#Spring-MVC-핵심-구성-요소)
@@ -390,3 +390,9 @@ public ViewResolver viewResolver() {
 	1. DefaultServeltHandlerConfigurer#enable() 메서드가 등록한 SimpleUrlHanlderMapping에 대해 DefaultServletHttpRequestHanlder 를 리턴
     
 	2. DefaultServletHttpRequestHanlder 는 디폴트 서블릿에 처리를 위임
+
+### 참고자료
+
+- https://velog.io/@do_dam/Spring-MVC%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80-%EC%8A%A4%ED%94%84%EB%A7%81-MVC-%EA%B5%AC%EC%A1%B0-%EC%9D%B4%ED%95%B4
+- https://wikidocs.net/115235
+- https://docs.spring.io/spring-framework/docs/3.2.x/spring-framework-reference/html/mvc.html
