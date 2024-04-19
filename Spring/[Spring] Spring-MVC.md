@@ -1,5 +1,6 @@
 # Spring-MVC 시작하기
 
+[실습코드](## 1. 프로젝트 구조)
 ## 1. 프로젝트 구조
 
 - src/main/java
@@ -190,3 +191,40 @@ public class ControllerConfig {
 cmd > `netstat -nao | findstr 8080`
 
 에서 해당 PID 확인 후 작업관리자에서 PID 작업 종료
+
+## Spring MVC 핵심 구성 요소
+
+### DispatcherServlet
+
+모든 연결을 담당. 클라이언트의 요청을 전달받아 요청에 맞는 컨트롤러가 리턴한 결과값을 View에 전달하여 알맞은 응답을 생성
+
+### HandlerMapping
+
+클라이언트의 요청 URL을 어떤 컨트롤러가 처리할 지 결정
+
+### Controller
+
+클라이언트의 요청을 처리한 뒤, 결과를 DispatcherServlet 에 리턴
+
+### ModelAndView
+
+컨트롤러가 처리한 결과 정보 및 뷰 선택에 필요한 정보를 담음
+
+### ViewResolver
+
+컨트롤러의 처리 결과를 생성할 뷰를 결정
+
+- BeanNameUrlHanlderMapping
+    - 빈 이름을 URL로 사용하는 매핑 전략
+    - 빈을 정의할 때 슬래시( `/`) 가 들어가면 매핑 대상이 된다. → `@Bean("/hello")`
+- ControllerClassNameHanlderMapping
+    - URL 과 일치하는 클래스 이름을 갖는 빈을 컨트롤러로 사용
+    - 이름 중 Controller를 제외하고 앞부분에 작성된 suffix를 소문자로 매핑
+- SimpleUrlHandlerMapping
+    - URL패텅에 매핑된 컨트롤러를 사용
+- DefaultAnnotationHanlderMapping
+    - 어노테이션으로 URL과 컨트롤러를 매핑
+
+### View
+
+컨트롤러의 처리 결과 화면을 생성. JSP 또는 템플릿 파일등을 뷰로 사용
