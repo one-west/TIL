@@ -93,45 +93,100 @@ public class MvaConfig implements WebMvcConfigurer {
 ![sprint MVC 동작흐름](https://blog.kakaocdn.net/dn/Or4T1/btqFcNAEiAD/VLPsPQcUnUC8iWw8suH3Ek/img.png)
 
 ```xml
-	<!-- 서블릿 등록 -->
-  <servlet>
-    <servlet-name>dispatcher</servlet-name>
+<!-- 서블릿 등록 -->
+<servlet>
+	<servlet-name>dispatcher</servlet-name>
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
     <init-param>
-      <param-name>contextClass</param-name>
-      <param-value>org.springframework.web.context.support.AnnotationConfigWebApplicationContext</param-value>
+		<param-name>contextClass</param-name>
+		<param-value>org.springframework.web.context.support.AnnotationConfigWebApplicationContext</param-value>
     </init-param>
     <!-- 스프링 설정파일 설정 -->
     <init-param>
-      <param-name>contextConfigLocation</param-name>
-      <param-value>
-        config.MvcConfig
-        config.ControllerConfig
-      </param-value>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+			config.MvcConfig
+			config.ControllerConfig
+      	</param-value>
     </init-param>
     <load-on-startup>1</load-on-startup>
-  </servlet>
+</servlet>
 
-	<!-- 서블릿 매핑 -->
-	<!-- 사용자의 모든 요청 (url-pattern '/' ) 을 DispatcherServlet 에 전달 -->
-  <servlet-mapping>
-    <servlet-name>dispatcher</servlet-name>
-    <url-pattern>/</url-pattern>
-  </servlet-mapping>
+<!-- 서블릿 매핑 -->
+<!-- 사용자의 모든 요청 (url-pattern '/' ) 을 DispatcherServlet 에 전달 -->
+<servlet-mapping>
+	<servlet-name>dispatcher</servlet-name>
+	<url-pattern>/</url-pattern>
+</servlet-mapping>
 
-  <filter>
+<filter>
     <filter-name>encodingFilter</filter-name>
     <filter-class>org.apache.catalina.filters.SetCharacterEncodingFilter</filter-class>
     <init-param>
-      <param-name>encoding</param-name>
-      <param-value>UTF-8</param-value>
+      	<param-name>encoding</param-name>
+      	<param-value>UTF-8</param-value>
     </init-param>
-  </filter>
-  <filter-mapping>
-    <filter-name>encodingFilter</filter-name>
+</filter>
+<filter-mapping>
+	<filter-name>encodingFilter</filter-name>
     <url-pattern>/*</url-pattern>
-  </filter-mapping>
+</filter-mapping>
 
 </web-app>
 // 서블릿 제외한 나머지 생략
 ```
+
+### 3-3. Controller 작성
+
+```java
+package chapter09;
+
+// 클래스가 Controller 빈 객체로 사용될 수 있게 선언
+@Controller
+public class HelloController {
+
+    @RequestMapping("/hello")
+    public String hello(Model model, @RequestParam(value="name", required = false) String name) {
+        System.out.println("Hello Controller >>> ");
+        // Model 객체에 "greeting" 이라는 이름으로 데이터를 담음 
+        model.addAttribute("greeting", "안녕하세요,"+name);
+        
+        // View에 필요한 정보를 hello 값으로 반환 
+        // '/WEB-INF/view/hello.jsp' 를 찾음
+        return "hello";
+    }
+}
+```
+
+```java
+package config;
+
+@Configuration
+public class ControllerConfig {
+    @Bean
+    public HelloController helloController() {
+        return new HelloController();
+    }
+}
+```
+
+### 3-4. view 작성
+
+```html
+<%@ page contentType="text/html; charset=UTF-8" %>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hello</title>
+    </head>
+    <body>
+    인사말 : ${greeting}
+    </body>
+</html>
+```
+
+### Already address in use 에러 발생시
+
+cmd > `netstat -nao | findstr 8080`
+
+에서 해당 PID 확인 후 작업관리자에서 PID 작업 종료
