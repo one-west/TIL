@@ -1,8 +1,27 @@
 # Spring-MVC 시작하기
 
-1. [실습시작](##1.-프로젝트-구조)
-2. [스프링 MVC의 핵심 요소](##Spring-MVC-핵심-구성-요소)
-5. 
+- [Spring-MVC 시작하기](#Spring-MVC-시작하기)
+	- [프로젝트 구조](##1.-프로젝트-구조)
+	- [Tomcat9](##2.-Tomcat9)
+	- [설정하기](##3.-설정하기)
+		- [MvcConfig](###3-1.-MvcConfig)
+		- [web.xml](###3-2.-web.xml)
+  		- [Controller 작성](###3-3.-Controller-작성)
+      	- [view 작성](###3-4.-view-작성)
+
+- [Spring-MVC 동작방식](#Spring-MVC-동작방식)
+	- [스프링 MVC의 핵심 요소](##Spring-MVC-핵심-구성-요소)
+   		- [DispatcherServlet](###DispatcherServlet)
+    	- [HandlerMapping](###HandlerMapping)
+        - [Controller](###Controller)
+        - [ModelAndView](###ModelAndView)
+  		- [ViewResolver](###ViewResolver)
+      	- [View](###View)
+	- [DispatcherServlet과 스프링 컨테이너](##DispatcherServlet과-스프링-컨테이너)
+   		- [webMvcConfigurer 인터페이스](###webMvcConfigurer-인터페이스)
+       	- [JSP를 위한 ViewResolver](###JSP를-위한-ViewResolver)
+       	- [디폴트 핸들러 와 HandlerMapping 우선순위](###디폴트-핸들러-와-HandlerMapping-우선순위)
+
 ## 1. 프로젝트 구조
 
 - src/main/java
@@ -196,6 +215,8 @@ cmd > `netstat -nao | findstr 8080`
 
 <br>
 
+# Spring-MVC 동작방식
+
 ## Spring MVC 핵심 구성 요소
 
 ### DispatcherServlet
@@ -273,6 +294,7 @@ HandlerMapping, HandlerAdapter, Controller, ViewResolver 등의 빈은 Dispatche
 @EnableWebMvc
 public class MvcConfig implements WebMvcConfigurer {
 ```
+
 @Controller 객체는 DispatcherServlet 입장에서 보면 한 종류의 핸들러 객체이다.
 
 HandlerMapping과 HandlerAdapter를 사용하므로 알맞은 빈이 스프링 설정에 등록되어 있어야 한다.
@@ -352,7 +374,8 @@ greeting 키를 갖는 Map객체를 View 에 전달.
 
 → `/index.html` 등과 같은 요청을 처리할 수 있는 컨트롤러 객체를 찾지 못해 404 응답을 전송한다.
 
-이러한 경로를 처리하기 위한 컨트롤러 객체를 직접 구현할 수 도 있지만, 그보다는 WebMvcConfigurer의 configureDefaultServletHandlring() 메소드를 사용하는 것이 편리하다.
+이러한 경로를 처리하기 위한 컨트롤러 객체를 직접 구현할 수 도 있지만,  
+그보다는 WebMvcConfigurer의 configureDefaultServletHandlring() 메소드를 사용하는 것이 편리하다.
 
 DefaultServeltHandlerConfigurer#enable() 는 아래 두 객체를 추가한다.
 
