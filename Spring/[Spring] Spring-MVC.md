@@ -5,7 +5,7 @@
 	- [Tomcat9](#2-Tomcat9)
 	- [설정하기](#3-설정하기)
 		- [MvcConfig](#3-1-MvcConfig)
-		- [web.xml](#3-2-web.xml)
+		- [web.xml](#3-2-webxml)
   		- [Controller 작성](#3-3-Controller-작성)
       	- [view 작성](#3-4-view-작성)
 
