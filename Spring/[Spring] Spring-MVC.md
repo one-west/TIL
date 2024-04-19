@@ -1,13 +1,13 @@
 # Spring-MVC 시작하기
 
 - [Spring-MVC 시작하기](#Spring-MVC-시작하기)
-	- [프로젝트 구조](#프로젝트-구조)
-	- [Tomcat9](#Tomcat9)
-	- [설정하기](#설정하기)
-		- [MvcConfig](#MvcConfig)
-		- [web.xml](#web.xml)
-  		- [Controller 작성](#Controller-작성)
-      	- [view 작성](#view-작성)
+	- [프로젝트 구조](#1-프로젝트-구조)
+	- [Tomcat9](#2-Tomcat9)
+	- [설정하기](#3-설정하기)
+		- [MvcConfig](#3-1MvcConfig)
+		- [web.xml](#3-2web.xml)
+  		- [Controller 작성](#3-3Controller-작성)
+      	- [view 작성](#3-4view-작성)
 
 - [Spring-MVC 동작방식](#Spring-MVC-동작방식)
 	- [스프링 MVC의 핵심 요소](#Spring-MVC-핵심-구성-요소)
