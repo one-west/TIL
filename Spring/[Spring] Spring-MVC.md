@@ -268,6 +268,11 @@ HandlerMapping, HandlerAdapter, Controller, ViewResolver 등의 빈은 Dispatche
 
 ### @Controller를 위한 HandlerMapping과 HandlerAdapter
 
+```java
+@Configuration
+@EnableWebMvc
+public class MvcConfig implements WebMvcConfigurer {
+```
 @Controller 객체는 DispatcherServlet 입장에서 보면 한 종류의 핸들러 객체이다.
 
 HandlerMapping과 HandlerAdapter를 사용하므로 알맞은 빈이 스프링 설정에 등록되어 있어야 한다.
@@ -334,7 +339,12 @@ greeting 키를 갖는 Map객체를 View 에 전달.
 
 ### 디폴트 핸들러 와 HandlerMapping 우선순위
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/9b26350c-aa9b-4c90-88a3-2b752d5d66dd/d0ad6ca8-5f36-4426-95b0-9e7367e038ed/Untitled.png)
+```xml
+<servlet-mapping>
+	<servlet-name>dispatcher</servlet-name>
+	<url-pattern>/</url-pattern>
+</servlet-mapping>
+```
 
 매핑경로가 `/` 인 경우 `.jsp` 로 끝나는 요청을 제외한 모든 요청을 DispatcherServlet 이 처리한다.
 
@@ -343,8 +353,6 @@ greeting 키를 갖는 Map객체를 View 에 전달.
 → `/index.html` 등과 같은 요청을 처리할 수 있는 컨트롤러 객체를 찾지 못해 404 응답을 전송한다.
 
 이러한 경로를 처리하기 위한 컨트롤러 객체를 직접 구현할 수 도 있지만, 그보다는 WebMvcConfigurer의 configureDefaultServletHandlring() 메소드를 사용하는 것이 편리하다.
-
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/9b26350c-aa9b-4c90-88a3-2b752d5d66dd/bd0362ff-1e1b-4128-ad23-b5804aa6822e/Untitled.png)
 
 DefaultServeltHandlerConfigurer#enable() 는 아래 두 객체를 추가한다.
 
