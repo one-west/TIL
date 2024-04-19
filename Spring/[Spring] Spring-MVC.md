@@ -221,23 +221,23 @@ cmd > `netstat -nao | findstr 8080`
 
 ### DispatcherServlet
 
-모든 연결을 담당. 클라이언트의 요청을 전달받아 요청에 맞는 컨트롤러가 리턴한 결과값을 View에 전달하여 알맞은 응답을 생성
+- 모든 연결을 담당. 클라이언트의 요청을 전달받아 요청에 맞는 컨트롤러가 리턴한 결과값을 View에 전달하여 알맞은 응답을 생성
 
 ### HandlerMapping
 
-클라이언트의 요청 URL을 어떤 컨트롤러가 처리할 지 결정
+- 클라이언트의 요청 URL을 어떤 컨트롤러가 처리할 지 결정
 
 ### Controller
 
-클라이언트의 요청을 처리한 뒤, 결과를 DispatcherServlet 에 리턴
+- 클라이언트의 요청을 처리한 뒤, 결과를 DispatcherServlet 에 리턴
 
 ### ModelAndView
 
-컨트롤러가 처리한 결과 정보 및 뷰 선택에 필요한 정보를 담음
+- 컨트롤러가 처리한 결과 정보 및 뷰 선택에 필요한 정보를 담음
 
 ### ViewResolver
 
-컨트롤러의 처리 결과를 생성할 뷰를 결정
+- 컨트롤러의 처리 결과를 생성할 뷰를 결정
 
 - BeanNameUrlHanlderMapping
     - 빈 이름을 URL로 사용하는 매핑 전략
@@ -283,7 +283,7 @@ cmd > `netstat -nao | findstr 8080`
 
 ## DispatcherServlet과 스프링 컨테이너
 
-HandlerMapping, HandlerAdapter, Controller, ViewResolver 등의 빈은 DispatcherServlet이 생성한 스프링 컨테이너에서 구한다 → 설정파일에 이들 빈에 대한 정보가 포함되어있어야 한다.
+- HandlerMapping, HandlerAdapter, Controller, ViewResolver 등의 빈은 DispatcherServlet이 생성한 스프링 컨테이너에서 구한다 → 설정파일에 이들 빈에 대한 정보가 포함되어있어야 한다.
 
 <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbdLd0W%2Fbtqwr4rgWcL%2Fk2Gye3hx5D8MxlpBpoqk90%2Fimg.png" align="center" >
 
@@ -295,18 +295,18 @@ HandlerMapping, HandlerAdapter, Controller, ViewResolver 등의 빈은 Dispatche
 public class MvcConfig implements WebMvcConfigurer {
 ```
 
-@Controller 객체는 DispatcherServlet 입장에서 보면 한 종류의 핸들러 객체이다.
+- @Controller 객체는 DispatcherServlet 입장에서 보면 한 종류의 핸들러 객체이다.
 
-HandlerMapping과 HandlerAdapter를 사용하므로 알맞은 빈이 스프링 설정에 등록되어 있어야 한다.
+- HandlerMapping과 HandlerAdapter를 사용하므로 알맞은 빈이 스프링 설정에 등록되어 있어야 한다.
 
-@EnableWebMvc 태그가 빈으로 추가해주는 클래스 중에는 @Contoller 타입의 핸들러 객체를 처리하기 위해 아래 두 클래스도 포함되어있다.
+- @EnableWebMvc 태그가 빈으로 추가해주는 클래스 중에는 @Contoller 타입의 핸들러 객체를 처리하기 위해 아래 두 클래스도 포함되어있다.
 
-- org.springframework.web.sevlet.mvc.method.annotation.RequestMappingHandlerMapping
-- org.springframework.web.sevlet.mvc.method.annotation.RequestMappingHanlderAdapter
+	- org.springframework.web.sevlet.mvc.method.annotation.RequestMappingHandlerMapping
+	- org.springframework.web.sevlet.mvc.method.annotation.RequestMappingHanlderAdapter
 
 ### webMvcConfigurer 인터페이스
 
-@EnableWebMvc 어노테이션을 사용하면 WebConfigurer 타입인 빈 객체의 메서드를 호출하여 MVC 설정을 추가한다.  기본 구현은 모두 빈 구현으로 재정의가 필요한 메서드만 구현하면된다.
+- @EnableWebMvc 어노테이션을 사용하면 WebConfigurer 타입인 빈 객체의 메서드를 호출하여 MVC 설정을 추가한다.  기본 구현은 모두 빈 구현으로 재정의가 필요한 메서드만 구현하면된다.
 
 - configureViewResolver() : 뷰 관련 설정
 
@@ -329,7 +329,7 @@ public class MvcConfig implements WebMvcConfigurer {
 
 ### JSP를 위한 ViewResolver
 
-configureViewResolvers() 의 viewResolverRegistry 를 이요하면 다음과 같이 빈으로 등록된다.
+- configureViewResolvers() 의 viewResolverRegistry 를 이요하면 다음과 같이 빈으로 등록된다.
 
 ```java
 @Bean
@@ -341,7 +341,7 @@ public ViewResolver viewResolver() {
 }
 ```
 
-DispatcherServlet 이 리턴한 ModelAndView 객체 : Map 형식으로 전달된다.
+- DispatcherServlet 이 리턴한 ModelAndView 객체 : Map 형식으로 전달된다.
 
 ```java
 @GetMapping("/hello")
@@ -352,7 +352,7 @@ DispatcherServlet 이 리턴한 ModelAndView 객체 : Map 형식으로 전달된
     }
 ```
 
-greeting 키를 갖는 Map객체를 View 에 전달.
+- greeting 키를 갖는 Map객체를 View 에 전달.
 
 ```html
 <%@ page contentType="text/html; charset=UTF-8" %>
@@ -368,23 +368,25 @@ greeting 키를 갖는 Map객체를 View 에 전달.
 </servlet-mapping>
 ```
 
-매핑경로가 `/` 인 경우 `.jsp` 로 끝나는 요청을 제외한 모든 요청을 DispatcherServlet 이 처리한다.
+- 매핑경로가 `/` 인 경우 `.jsp` 로 끝나는 요청을 제외한 모든 요청을 DispatcherServlet 이 처리한다.
 
-@EnableWebMvc 가 등록하는 HandlerMapping 은 @Controller 어노테이션을 적용한 빈 객체가 처리할 수 있는 요청 경로만 대응할 수 있다.
+- @EnableWebMvc 가 등록하는 HandlerMapping 은 @Controller 어노테이션을 적용한 빈 객체가 처리할 수 있는 요청 경로만 대응할 수 있다.
 
-→ `/index.html` 등과 같은 요청을 처리할 수 있는 컨트롤러 객체를 찾지 못해 404 응답을 전송한다.
+- → `/index.html` 등과 같은 요청을 처리할 수 있는 컨트롤러 객체를 찾지 못해 404 응답을 전송한다.
 
-이러한 경로를 처리하기 위한 컨트롤러 객체를 직접 구현할 수 도 있지만,  
-그보다는 WebMvcConfigurer의 configureDefaultServletHandlring() 메소드를 사용하는 것이 편리하다.
+- 이러한 경로를 처리하기 위한 컨트롤러 객체를 직접 구현할 수 도 있지만, 그보다는 WebMvcConfigurer의 configureDefaultServletHandlring() 메소드를 사용하는 것이 편리하다.
 
-DefaultServeltHandlerConfigurer#enable() 는 아래 두 객체를 추가한다.
+- DefaultServeltHandlerConfigurer#enable() 는 아래 두 객체를 추가한다.
 
-- DefaultServletHttpRequestHandler : 클라이언트의 모든 요청을 WAS가 제공하는 디폴트 서블릿에 전달한다.
-- SimpleUrlHanlderMapping : 모든 경로 `/**` 를 DefaultServletHttpRequestHandler를 이용해서 처리하도록 설정
+	- DefaultServletHttpRequestHandler : 클라이언트의 모든 요청을 WAS가 제공하는 디폴트 서블릿에 전달한다.
+	- SimpleUrlHanlderMapping : 모든 경로 `/**` 를 DefaultServletHttpRequestHandler를 이용해서 처리하도록 설정
 
-**우선순위**
+- **우선순위**
 
 1. RequestMappingHandlerMapping을 사용해 요청을 처리할 핸들러를 검색 : 존재하면 해당 컨트롤러를 이용해서 요청을 처리
+
 2. 존재하지 않으면 SimpleUrlHandlerMapping을 사용해 핸들러 검색
-    1. DefaultServeltHandlerConfigurer#enable() 메서드가 등록한 SimpleUrlHanlderMapping에 대해 DefaultServletHttpRequestHanlder 를 리턴
-    2. DefaultServletHttpRequestHanlder 는 디폴트 서블릿에 처리를 위임
+    
+	1. DefaultServeltHandlerConfigurer#enable() 메서드가 등록한 SimpleUrlHanlderMapping에 대해 DefaultServletHttpRequestHanlder 를 리턴
+    
+	2. DefaultServletHttpRequestHanlder 는 디폴트 서블릿에 처리를 위임
