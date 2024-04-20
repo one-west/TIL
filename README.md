@@ -48,3 +48,12 @@
 ### Certification
 - [[정보처리산업기사] 1과목 정보시스템 기반 기술 (1장)](https://github.com/one-west/TIL/blob/main/Certification/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EC%82%B0%EC%97%85%EA%B8%B0%EC%82%AC/%5B1%EA%B3%BC%EB%AA%A9%5D%20%EC%A0%95%EB%B3%B4%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B8%B0%EB%B0%98%20%EA%B8%B0%EC%88%A0%20(1%EC%9E%A5).md)
 - [[정보처리산업기사] 1과목 정보시스템 기반 기술 (2장)](https://github.com/one-west/TIL/blob/main/Certification/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EC%82%B0%EC%97%85%EA%B8%B0%EC%82%AC/%5B1%EA%B3%BC%EB%AA%A9%5D%20%EC%A0%95%EB%B3%B4%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B8%B0%EB%B0%98%20%EA%B8%B0%EC%88%A0%20(2%EC%9E%A5).md)
+- [[정보처리산업기사] 1과목 정보시스템 기반 기술 (3장)](https://github.com/one-west/TIL/blob/main/Certification/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EC%82%B0%EC%97%85%EA%B8%B0%EC%82%AC/%5B1%EA%B3%BC%EB%AA%A9%5D%20%EC%A0%95%EB%B3%B4%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B8%B0%EB%B0%98%20%EA%B8%B0%EC%88%A0%20(3%EC%9E%A5).md)
+- [[정보처리산업기사] 1과목 정보시스템 기반 기술 (4장)](https://github.com/one-west/TIL/blob/main/Certification/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EC%82%B0%EC%97%85%EA%B8%B0%EC%82%AC/%5B1%EA%B3%BC%EB%AA%A9%5D%20%EC%A0%95%EB%B3%B4%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B8%B0%EB%B0%98%20%EA%B8%B0%EC%88%A0%20(4%EC%9E%A5).md)
+
+
+
+
+
+
+
