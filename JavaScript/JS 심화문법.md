@@ -6,7 +6,9 @@
 - [스코프와 클로저](#스코프와클로저)
 - [호출 스택과 이벤트 루프](#호출스택과이벤트루프)
 - [프로미스와 async/await](#프로미스와async/await)
-
+- [DOM이란](#DOM)
+- [이벤트와 이벤트 리스너](#이벤트와_이벤트_리스너)
+- [window 객체](#window객체)
 
 ### 비동기와 타이머
 
@@ -91,4 +93,49 @@
 
 - 프로미스
 
+    - Promise라는 클래스를 사용하는 문법
+    - new를 붙여 Promise 클래스를 호출하면 프로미스 객체를 생성, 인수로 콜백 함수를 넣음
+    - 콜백 함수의 매개변수는 resolve()와 reject() 함수
+    - 콜백 함수 내부에서 resolve()나 reject() 함수 중 하나를 호출해야 함
+    - resolve() 함수 호출 프로미스 성공, reject() 함수 호출 프로미스 실패, 둘 다 호출하면 먼저 호출한 함수만 유효
+
+        ```js
+        const promise = new Promise( (resolve, reject) => {
+            if(조건식) {
+                resolve(); // 성공
+            } else {
+                reject(); // 실패
+            }
+        })
+        ```
+
+    - 프로미스 객체 then() 이나 catch() 를 사용할 수 있음
+    - 두 메서드의 인수에 콜백 함수를 넣어서 사용
+    - then()의 콜백 함수는 resolve()를 호출할 때 실행
+    - catch()의 콜백 함수는 reject()를 호출할 때 실행
+
+        ```js
+        const promise = new Promise( (resolve, reject) => {
+            if(조건식) {
+                resolve('Hello'); // 성공
+            } else {
+                reject('World'); // 실패
+            }
+        })
+
+        promise.then( (data) => console.log(data) )
+            .catch( (error) => console.log(error) );
+        ```
+
+- async / await
+    - await: 프로미스인 비동기 코드를 순서대로 실행하게 함
+      > 해당 키워드가 작성된 줄은 결과가 도착할 때까지 기다림
+
+- try-catch 문으로 에러 처리하기
+    - try-catch 문으로 감싸 에러 처리
+    - catch 문의 error는 사용하지 않는 경우 생략할 수 있음
+    - finally 문을 추가할 수 있음
+
 ### 참고자료
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
+- https://ko.javascript.info/promise-basics
