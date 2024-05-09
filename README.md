@@ -1,5 +1,5 @@
 # 나의 Today I Learned
-![Date](https://img.shields.io/badge/Start-2024.03.06-red) ![Update](https://img.shields.io/badge/update-2024.05.05-grean)
+![Date](https://img.shields.io/badge/Start-2024.03.06-red) ![Update](https://img.shields.io/badge/update-2024.05.10-grean)
 - 필자의 습관적인 나태함을 바로잡고자 부지런히 학습한 내용이나 개발관련 경험들을 기록하고자 한다.
 - 기존에 이미 공부한 내용은 복습한다 생각하고 천천히 작성한다.  
 
@@ -28,7 +28,8 @@
   
 ### JavaScript
 - [JavaScript란?](https://github.com/one-west/TIL/blob/main/JavaScript/JS%EB%9E%80%3F.md)
-- [JavaScript기본문법](https://github.com/one-west/TIL/blob/main/JavaScript/JS%EA%B8%B0%EB%B3%B8%EB%AC%B8%EB%B2%95.md)
+- [JavaScript 기본문법](https://github.com/one-west/TIL/blob/main/JavaScript/JS%EA%B8%B0%EB%B3%B8%EB%AC%B8%EB%B2%95.md)
+- [JavaScript 심화문법](https://github.com/one-west/TIL/blob/main/JavaScript/JS%20%EC%8B%AC%ED%99%94%EB%AC%B8%EB%B2%95.md)
 
 ### React
 - [React 시작하기](https://github.com/one-west/TIL/blob/main/React/React%20%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0.md)
