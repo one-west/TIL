@@ -175,7 +175,7 @@
    
 8. 컴포넌트 추출
     
-    - Component 추출을 사용하게 되면 Component 의 재사용성이 올라간다.
+	- Component 추출을 사용하게 되면 Component 의 재사용성이 올라간다.
     
     - Component 가 작아질 수록 기능이 명확해지고, prop 도 단순해 지기 때문에, 다른 곳에서 사용하기 좋아진다.
     
@@ -209,7 +209,7 @@
         }
         ```
   
-    - Avatar 추출하기
+	- Avatar 추출하기
 
         ```jsx
         function Avatar(props) {
@@ -224,9 +224,9 @@
         
         - 위와 같이 Avatar 을 추출해 준 뒤, Comment Component 에 img 태그 대신
         
-        ```jsx
-        <Avatar user={props.author} />
-        ```
+        	```jsx
+        	<Avatar user={props.author} />
+        	```
         
         위 코드를 넣어주면 된다.
 
@@ -268,54 +268,26 @@
         }
         ```
 
-## state
+9. 생명주기(Lifecycle)
 
-1. state란?
-    
-    - state는 리액트 컴포넌트의 상태를 의미
-    
-    - 상태의 의미는 정상인지 비정상인지가 아니라 컴포넌트의 데이터를 의미
-    
-    - 컴포넌트의 변경 가능한 데이터를 의미
-    
-    - state가 변하면 다시 렌더링이 되기 때문에 렌더링과 관련된 값만 state에 포함시켜야 함
+	- 생명주기는 컴포넌트의 생성 시점, 사용 시점, 종료 시점을 나타냄
 
-2. state의 특징
-    
-    - 리액트만의 특별한 형태가 아닌 단지 JS객체일 뿐이다.
+	- constructor가 실행되면서 컴포넌트가 생성된다.
 
-    - state는 변경은 가능하다고 했지만 직접 수정해서는 안됨
+	- 생성 직후 compomentDidMount() 함수가 호출
 
-    - 불가능 하다고 생각하는 것이 좋다
+	- 컴포넌트가 소멸하기 전까지 여러 번 랜더링 한다.
 
-    - state를 변경하고자 할 때는 setState() 함수를 사용함.
+	- 렌더링은 props, setState(), forceUpdate()에 의해 상태가 변경되면 이루어짐
 
-## 컴포넌트vs인스턴스vs엘리먼트
+	- 렌더링이 끝나면 compomentDidUpdate()가 호출
 
-- element는 화면에 나타낼 DOM tree에 대한 정보를 가지고 있는 순수 객체
+	- 마지막으로 컴포넌트가 언마운트 되면 compomentWillUnmount()함수 가 호출됨
 
-- Component는 props를 input으로 받아 DOM Node를 출력하는, 리액트로 만들어진 앱을 이루는 최소한의 단위
-
-- instance 클래스로 선언된 Component에서만 갖는 것.
-
-## 생명주기(Lifecycle)에 대해 알아보기
-
-- 생명주기는 컴포넌트의 생성 시점, 사용 시점, 종료 시점을 나타냄
-
-- constructor가 실행되면서 컴포넌트가 생성된다.
-
-- 생성 직후 compomentDidMount() 함수가 호출
-
-- 컴포넌트가 소멸하기 전까지 여러 번 랜더링 한다.
-
-- 렌더링은 props, setState(), forceUpdate()에 의해 상태가 변경되면 이루어짐
-
-- 렌더링이 끝나면 compomentDidUpdate()가 호출
-
-- 마지막으로 컴포넌트가 언마운트 되면 compomentWillUnmount()함수 가 호출됨
-
-![마운팅,업데이팅,언마운팅1.jpg](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FzNVQp%2FbtsDfPeNMg9%2FhkXlv1oQnXVHlDZnkJ47TK%2Fimg.png)
-![마운팅,업데이팅,언마운팅2.jpg](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FAgYkW%2FbtsDLKxfeHN%2FacLRPKVYV36YLWeXCPTvZ1%2Fimg.png)
+	![마운팅,업데이팅,언마운팅1.jpg](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FzNVQp%2FbtsDfPeNMg9%2FhkXlv1oQnXVHlDZnkJ47TK%2Fimg.png)
+	![마운팅,업데이팅,언마운팅2.jpg](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FAgYkW%2FbtsDLKxfeHN%2FacLRPKVYV36YLWeXCPTvZ1%2Fimg.png)
 
 ### 참고자료
 - https://ko.legacy.reactjs.org/docs/components-and-props.html
+- https://www.freecodecamp.org/korean/news/how-to-use-props-in-react/
+- [교재]소플의 처음 만난 리액트
