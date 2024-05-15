@@ -52,7 +52,7 @@
         ReactDOM.render(element, document.getElementById('root'));
       }
       setInterval(tick, 1000);
-    ```
+      ```
 
 ### 참고자료
 - [교재] 소플의 처음 만난 리액트
