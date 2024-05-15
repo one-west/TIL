@@ -20,7 +20,8 @@
 
 - 훅의 이름은 모두 use로 시작해야함
 
-### useState
+## useState
+
 - useState는 함수형 컴포넌트에서 state를 사용하기 위한 Hook이다.
 
 - 현재 상태를 나타내는 state값과 이 상태를 변경하는 setState값을 한 쌍으로 제공한다.
@@ -48,7 +49,8 @@
         );
     }
     ```
-### useEffect
+## useEffect
+
 - useState와 함께 가장 많이 사용하는 Hook이다.
 
 - 클래스 컴포넌트의 생명주기 함수와 같은 기능을 하나로 통합한 기능을 제공
@@ -57,6 +59,7 @@
     - componentWillUnmount  
 
 - Effect Hook을 사용하면 함수 컴포넌트에서 side effect를 수행할 수 있다.
+
 - useEffect는 기본적으로 useEffect(function, deps)의 형태로 사용한다.
 
 - sideEffect는 렌더링 외에 실핼해야 하는 부수적인 코드를 말한다.
@@ -89,7 +92,8 @@
         );
     }
     ```
-### useMemo
+## useMemo
+
 - useMemo() 훅은 memoized value를 리턴하는 훅이다.
 
 - useMemo는 의존성이 변경되었을 때에만 메모이제이션된 값만 다시 계산한다.
@@ -115,7 +119,8 @@
 
 > ※ 메모이제이션(memoization): 컴퓨터 프로그램이 동일한 계산을 반복해야 할 때, 이전에 계산한 값을 메모리에 저장함으로써 동일한 계산의 반복 수행을 제거하여 프로그램 실행 속도를 빠르게 하는 기술이다.
 
-### useCallback
+## useCallback
+
 - useCallback() 훅은 useMemo()와 유사한 역할을 한다.
 
 - 차이점은 useMemo() 훅은 memoized value 반환하고, useCallback()은 memoized function을 반환한다.
@@ -139,7 +144,8 @@
     // ...
     ```
     
-### useRef
+## useRef
+
 - useRef() 훅은 레퍼런스를 사용하기 위한 훅이다.
 
 - 특정 DOM에 접근하여 DOM 조작을 가능하게 하는 훅이다.
