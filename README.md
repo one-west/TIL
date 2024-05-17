@@ -1,5 +1,5 @@
 # 나의 Today I Learned
-![Date](https://img.shields.io/badge/Start-2024.03.06-red) ![Update](https://img.shields.io/badge/update-2024.05.15-grean)
+![Date](https://img.shields.io/badge/Start-2024.03.06-red) ![Update](https://img.shields.io/badge/update-2024.05.17-grean)
 - 필자의 습관적인 나태함을 바로잡고자 부지런히 학습한 내용이나 개발관련 경험들을 기록하고자 한다.
 - 기존에 이미 공부한 내용은 복습한다 생각하고 천천히 작성한다.  
 
@@ -38,8 +38,9 @@
 - [컴포넌트와 Props](https://github.com/one-west/TIL/blob/main/React/%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%99%80%20Props.md)
 - [Hook이란?](https://github.com/one-west/TIL/blob/main/React/Hook%EC%9D%B4%EB%9E%80%3F.md)
 
-### Web
-- [WWW이란?](https://github.com/one-west/TIL/blob/main/Web/World_Wide_Web.md)
+### Computer Network
+- [WWW이란?](https://github.com/one-west/TIL/blob/main/Computer%20Network/WWW.md)
+- [HTTP란?](https://github.com/one-west/TIL/blob/main/Computer%20Network/HTTP.md)
 
 ### Python
 - [Python 기본문법](https://github.com/one-west/TIL/blob/main/Python/python%20%EA%B8%B0%EB%B3%B8%EB%AC%B8%EB%B2%95.md)
