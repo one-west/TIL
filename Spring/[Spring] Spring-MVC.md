@@ -17,10 +17,11 @@
         - [ModelAndView](#ModelAndView)
   		- [ViewResolver](#ViewResolver)
       	- [View](#View)
-	- [DispatcherServlet과 스프링 컨테이너](#DispatcherServlet과-스프링-컨테이너)
-   		- [webMvcConfigurer 인터페이스](#webMvcConfigurer-인터페이스)
-       	- [JSP를 위한 ViewResolver](#JSP를-위한-ViewResolver)
-       	- [디폴트 핸들러 와 HandlerMapping 우선순위](#디폴트-핸들러-와-HandlerMapping-우선순위)
+
+- [DispatcherServlet과 스프링 컨테이너](#DispatcherServlet과-스프링-컨테이너)
+	- [webMvcConfigurer 인터페이스](#webMvcConfigurer-인터페이스)
+	- [JSP를 위한 ViewResolver](#JSP를-위한-ViewResolver)
+   	- [디폴트 핸들러 와 HandlerMapping 우선순위](#디폴트-핸들러-와-HandlerMapping-우선순위)
 
 ## 1. 프로젝트 구조
 
