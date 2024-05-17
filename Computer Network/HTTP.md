@@ -1,6 +1,6 @@
 # HTTP
 
-**하이퍼텍스트 전송 프로토콜** (HTTP)은 HTML과 같은 하이퍼미디어 문서를 전송하기 위한 [애플리케이션 레이어](https://en.wikipedia.org/wiki/Application_Layer)
+**하이퍼텍스트 전송 프로토콜** (HTTP)은 HTML과 같은 하이퍼미디어 문서를 전송하기 위한 [애플리케이션 레이어](https://ko.wikipedia.org/wiki/%EC%9D%91%EC%9A%A9_%EA%B3%84%EC%B8%B5)
  프로토콜
 
 ## URI (Uniform Resource Identifier) 구문
@@ -73,3 +73,8 @@ http://www.example.com:80/path/to/myfile.html?key1=value1&key2=value2 **#Somewhe
 - PUT : `PUT` 메서드는 목적 리소스 모든 현재 표시를 요청 payload로 바꿉니다.
 - DELETE : `DELETE` 메서드는 특정 리소스를 삭제합니다.
 - 그외 CONNECT, OPTIONS, PATCH 등
+
+### 참고자료
+- https://ko.wikipedia.org/wiki/%EC%9D%91%EC%9A%A9_%EA%B3%84%EC%B8%B5
+- https://ko.wikipedia.org/wiki/HTTP
+- https://developer.mozilla.org/ko/docs/Web/HTTP/Status
