@@ -12,6 +12,7 @@
 
 ### Java
 - [Java IDE 설치](https://github.com/one-west/TIL/blob/main/Java/Java%20IDE%20install%20%EB%B0%A9%EB%B2%95.md)
+- [Java 기본문법](https://github.com/one-west/TIL/blob/main/Java/Java%20%EA%B8%B0%EB%B3%B8%EB%AC%B8%EB%B2%95.md)
 
 ### Spring
 - [Spring이란?](https://github.com/one-west/TIL/blob/main/Spring/%5BSpring%5D%20%EC%9D%B4%EB%9E%80%3F.md)
