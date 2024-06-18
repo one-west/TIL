@@ -7,16 +7,7 @@ JSON(JavaScript Object Notation) : 간단한 형식을 갖는 문자열로 데�
 	"name": "onewest",
 	"birthday":"2000-09-06",
 	"age": 25,
-	"edu":[
-		{
-			"title":"ㄱ개",
-			"year": 1916
-		},
-		{
-			"title":"이화학당고등과",
-			"year": 1919
-		},
-	]
+	"dev": "Back-End"
 }
 ```
 
@@ -34,7 +25,7 @@ JSON(JavaScript Object Notation) : 간단한 형식을 갖는 문자열로 데�
     | ["일", "이"] | 배열(array) |
     | null | 널(NULL) |
 
-# 2. Jackson 의존 설정
+# Jackson 의존 설정
 
 Jackson은 자바 객체와 JSON형식 문자열 간 변환을 처리하는 라이브러리
 
@@ -69,7 +60,7 @@ public class Person {
 }
 ```
 
-# 3. @RestController
+# @RestController
 
 스프링 MVC에서 JSON 형식으로 데이터를 응답하는 법
 
@@ -104,8 +95,6 @@ public class RestMemberController {
 
 ```
 
-- [RestMemberController.java](http://RestMemberController.java) 빈 등록
-
 `@RestController` 를 붙인 경우 스프링 MVC는 메소드가 리턴한 객체를 알맞은 형식으로 변환해서 응답
 
 → 이때 클래스 패스에 Jackson 이 존재하면 JSON 형식의 문자열로 변환해서 응답
@@ -135,7 +124,7 @@ public class Member {
 
 registerDateTime속성은 LocalDateTime → JSON 값은 배열로 변환되었다.
 
-(만약 [java.util.Date](http://java.util.Date) 타입이면 유닉스 타임스탬프로 변환됨)
+(만약 java.util.Date 타입이면 유닉스 타임스탬프로 변환됨)
 
 Jackson 에서 날짜나 시간 값을 특정한 형식으로 표현 : @JsonFormat
 
@@ -227,13 +216,9 @@ public void newMember(@RequestBody @Valid RegisterRequest registerRequest, HttpS
 }
 ```
 
-![등록 성공 - 201](https://prod-files-secure.s3.us-west-2.amazonaws.com/9b26350c-aa9b-4c90-88a3-2b752d5d66dd/e30818ba-439e-408a-b454-618e03ee45d8/Untitled.png)
+- 등록 성공 - 201 : response.setStatus(HttpServletResponse.SC_CREATED);
 
-등록 성공 - 201
-
-![중복 등록시 -  409 ](https://prod-files-secure.s3.us-west-2.amazonaws.com/9b26350c-aa9b-4c90-88a3-2b752d5d66dd/5a84cc52-d4ee-4451-bde3-c3e3845b5684/Untitled.png)
-
-중복 등록시 -  409 
+- 중복 등록시 -  409 : response.sendError(HttpServletResponse.SC_CONFLICT);
 
 ### **ResponseEntity 로 객체 리턴하고 응답 코드 지정**
 
@@ -328,3 +313,4 @@ public ResponseEntity<Object> newMember(@RequestBody @Valid RegisterRequest regi
 ### 참고자료
 
 - https://www.json.org/json-ko.html
+- [교재] 짧고 굵게 배우는 JSP 웹 프로그래밍과 스프링 프레임워크
