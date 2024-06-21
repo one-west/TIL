@@ -391,3 +391,9 @@ Email = 올바른 이메일 주소를 입력해야 합니다.
 @NegativeOrZero : 0 또는 음수인지
 
 @Email : 이메일 주소가 유효한지 검사
+
+### 참고자료
+
+- https://velog.io/@tjeong/Spring-Message-%EC%82%AC%EC%9A%A9%EB%B2%95
+- https://velog.io/@rjsdn04111/Spring-Validation-VS-Java-Bean-Validation-%EC%B0%A8%EC%9D%B4-%EA%B7%B8%EB%A6%AC%EA%B3%A0-%EA%B0%81%EA%B0%81%EC%9D%98-%EA%B5%AC%ED%98%84-%EB%B0%A9%EC%8B%9D
+- [교재] 짧고 굵게 배우는 JSP 웹 프로그래밍과 스프링 프레임워크
