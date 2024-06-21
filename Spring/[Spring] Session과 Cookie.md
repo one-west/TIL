@@ -374,3 +374,8 @@ public String submit(LoginCommand loginCommand, Errors errors, HttpSession sessi
     }
 }
 ```
+
+### 참고 자료
+- https://velog.io/@hanueleee/Spring-Spring%EC%97%90%EC%84%9C-Session-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0
+- https://velog.io/@woojjam/Spring-%EC%BF%A0%ED%82%A4%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%9C-%EB%A1%9C%EA%B7%B8%EC%9D%B8-%EA%B5%AC%ED%98%84
+- [교재] 짧고 굵게 배우는 JSP 웹 프로그래밍과 스프링 프레임워크
