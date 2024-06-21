@@ -1,5 +1,5 @@
 # 나의 Today I Learned
-![Date](https://img.shields.io/badge/Start-2024.03.06-red) ![Update](https://img.shields.io/badge/update-2024.06.20-grean)
+![Date](https://img.shields.io/badge/Start-2024.03.06-red) ![Update](https://img.shields.io/badge/update-2024.06.21-grean)
 - 필자의 습관적인 나태함을 바로잡고자 부지런히 학습한 내용이나 개발관련 경험들을 기록하고자 한다.
 - 기존에 이미 공부한 내용은 복습한다 생각하고 천천히 작성한다.  
 
@@ -23,7 +23,9 @@
 - [Spring AOP](https://github.com/one-west/TIL/blob/main/Spring/%5BSpring%5D%20AOP.md)
 - [Spring DB연동](https://github.com/one-west/TIL/blob/main/Spring/%5BSpring%5D%20DB%EC%97%B0%EB%8F%99.md)
 - [Spring MVC](https://github.com/one-west/TIL/blob/main/Spring/%5BSpring%5D%20Spring-MVC.md)
-- [Spring JSON](https://github.com/one-west/TIL/blob/main/Spring/%5BSpring%5D%20JSON.md) 
+- [Spring JSON](https://github.com/one-west/TIL/blob/main/Spring/%5BSpring%5D%20JSON.md)
+- [Spring Message와 Validation](https://github.com/one-west/TIL/blob/main/Spring/%5BSpring%5D%20Message%EC%99%80%20Validation.md)
+- [Spring Session과 Cookie](https://github.com/one-west/TIL/blob/main/Spring/%5BSpring%5D%20Session%EA%B3%BC%20Cookie.md)
 
 ### HTML-CSS
 - [[CSS3] Flex Guide](https://github.com/one-west/TIL/blob/main/CSS/Flex%20Guide.md)
