@@ -1,5 +1,5 @@
 # 나의 Today I Learned
-![Date](https://img.shields.io/badge/Start-2024.03.06-red) ![Update](https://img.shields.io/badge/update-2024.06.21-grean)
+![Date](https://img.shields.io/badge/Start-2024.03.06-red) ![Update](https://img.shields.io/badge/update-2024.06.26-grean)
 - 필자의 습관적인 나태함을 바로잡고자 부지런히 학습한 내용이나 개발관련 경험들을 기록하고자 한다.
 - 기존에 이미 공부한 내용은 복습한다 생각하고 천천히 작성한다.  
 
@@ -52,6 +52,14 @@
 
 ### Design Pattern
 - [Singleton pattern](https://github.com/one-west/TIL/blob/main/Design%20Pattern/Singleton%20pattern.md)
+
+### SW_Security
+- [시스템기초-운영체제 개요](https://github.com/one-west/TIL/blob/main/SW_Security/%EC%8B%9C%EC%8A%A4%ED%85%9C%EA%B8%B0%EC%B4%88-%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C%20%EA%B0%9C%EC%9A%94.md)
+- [시스템기초-운영체제 종류](https://github.com/one-west/TIL/blob/main/SW_Security/%EC%8B%9C%EC%8A%A4%ED%85%9C%EA%B8%B0%EC%B4%88-%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C%20%EC%A2%85%EB%A5%98.md)
+- [시스템기초-운영체제 특징](https://github.com/one-west/TIL/blob/main/SW_Security/%EC%8B%9C%EC%8A%A4%ED%85%9C%EA%B8%B0%EC%B4%88-%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C%20%ED%8A%B9%EC%A7%95.md)
+- [윈도우 운영체제 기초-윈도우 운영체제 개요](https://github.com/one-west/TIL/blob/main/SW_Security/%EC%9C%88%EB%8F%84%EC%9A%B0%20%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C%20%EA%B8%B0%EC%B4%88-%EC%9C%88%EB%8F%84%EC%9A%B0%20%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C%20%EA%B0%9C%EC%9A%94.md)
+- [윈도우 운영체제 기초-사용자계정,그룹,패스워드](https://github.com/one-west/TIL/blob/main/SW_Security/%EC%9C%88%EB%8F%84%EC%9A%B0%20%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C%20%EA%B8%B0%EC%B4%88-%EC%82%AC%EC%9A%A9%EC%9E%90%EA%B3%84%EC%A0%95%2C%EA%B7%B8%EB%A3%B9%2C%ED%8C%A8%EC%8A%A4%EC%9B%8C%EB%93%9C.md)
+- [윈도우 운영체제 기초-어플리케이션,서비스,스케쥴러](https://github.com/one-west/TIL/blob/main/SW_Security/%EC%9C%88%EB%8F%84%EC%9A%B0%20%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C%20%EA%B8%B0%EC%B4%88-%EC%96%B4%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98%2C%EC%84%9C%EB%B9%84%EC%8A%A4%2C%EC%8A%A4%EC%BC%80%EC%A5%B4%EB%9F%AC.md)
 
 ### Certification
 - [[정보처리산업기사] 1과목 정보시스템 기반 기술 (1장)](https://github.com/one-west/TIL/blob/main/Certification/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EC%82%B0%EC%97%85%EA%B8%B0%EC%82%AC/%5B1%EA%B3%BC%EB%AA%A9%5D%20%EC%A0%95%EB%B3%B4%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B8%B0%EB%B0%98%20%EA%B8%B0%EC%88%A0%20(1%EC%9E%A5).md)
