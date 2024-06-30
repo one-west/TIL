@@ -4,9 +4,9 @@
 
 ## 목록
 
-- [DMZ(Demilitarized Zone)](#dmz(demilitarized-zone))
-- [NAT(Network Address Translation)](#nat(network-address-translation))
-- [VPN(Virtual Private Networking)](#vpn(virtual-private-networking))
+- [DMZ(Demilitarized Zone)](#dmz-demilitarized-zone))
+- [NAT(Network Address Translation)](#nat-network-address-translation)
+- [VPN(Virtual Private Networking)](#vpn-virtual-private-networking)
 
 ## DMZ(Demilitarized Zone)
 
@@ -32,7 +32,7 @@
 
     <img src="https://w7.pngwing.com/pngs/32/151/png-transparent-dmz-computer-network-virtual-desktop-infrastructure-computer-servers-system-citrics-computer-network-angle-text-thumbnail.png" width="600">
 
-### DMZ(Demilitarized Zone) 구성
+### DMZ (Demilitarized Zone) 구성
 
 - DMZ에 외부에서 접근 가능한 서비스를 결정해야 함 (웹서버, 메일 서버, FTP 서버 등)
 
@@ -82,7 +82,7 @@
     - 웹방화벽(WAF), IPS/IDS(침입 차단 / 탐지 시스템) 등의 보안 장비 설치
  
 
-## NAT(Network Address Translation)
+## NAT (Network Address Translation)
 
 ### NAT (네트워크 주소 변환) 란?
 
@@ -138,7 +138,7 @@
   
 - LS NAT (Load Sharing NAT) = 1 : n
 
-## VPN(Virtual Private Networking)
+## VPN (Virtual Private Networking)
 
 ### VPN (가상사설망) 이란?
 
