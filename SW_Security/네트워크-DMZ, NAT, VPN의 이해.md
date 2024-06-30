@@ -4,9 +4,9 @@
 
 ## 목록
 
-- [DMZ(Demilitarized Zone)](#DMZ(Demilitarized-Zone))
-- [NAT(Network Address Translation)](#NAT(Network-Address-Translation))
-- [VPN(Virtual Private Networking)](#VPN(Virtual-Private-Networking))
+- [DMZ(Demilitarized Zone)](#dmz(demilitarized-zone))
+- [NAT(Network Address Translation)](#nat(network-address-translation))
+- [VPN(Virtual Private Networking)](#vpn(virtual-private-networking))
 
 ## DMZ(Demilitarized Zone)
 
