@@ -5,8 +5,8 @@
 ## 목록
 
 - [DMZ(Demilitarized Zone)](#DMZ(Demilitarized-Zone))
-- []()
-- []()
+- [NAT(Network Address Translation)](#NAT(Network-Address-Translation))
+- [VPN(Virtual Private Networking)](#VPN(Virtual-Private-Networking))
 
 ## DMZ(Demilitarized Zone)
 
@@ -82,7 +82,7 @@
     - 웹방화벽(WAF), IPS/IDS(침입 차단 / 탐지 시스템) 등의 보안 장비 설치
  
 
-## NAT (Network Address Translation)
+## NAT(Network Address Translation)
 
 ### NAT (네트워크 주소 변환) 란?
 
@@ -138,7 +138,7 @@
   
 - LS NAT (Load Sharing NAT) = 1 : n
 
-## VPN (Virtual Private Networking)
+## VPN(Virtual Private Networking)
 
 ### VPN (가상사설망) 이란?
 
