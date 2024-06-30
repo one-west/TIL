@@ -8,7 +8,7 @@
 - [NAT(Network Address Translation)](#nat-network-address-translation)
 - [VPN(Virtual Private Networking)](#vpn-virtual-private-networking)
 
-## DMZ(Demilitarized Zone)
+## DMZ (Demilitarized Zone)
 
 ### DMZ란?
 
