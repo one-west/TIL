@@ -1,9 +1,9 @@
 # 목록
 
 - [Shared State](#Shared-State)
-- [합성(Composition)](#합성(Composition))
-- [상속(Inheritance)](#상속(Inheritance))
-- [컨텍스트(Context)](#컨텍스트(Context))
+- [합성(Composition)](#합성Composition)
+- [상속(Inheritance)](#상속Inheritance)
+- [컨텍스트(Context)](#컨텍스트Context)
 
 ## Shared State
 
