@@ -1,5 +1,5 @@
 # 나의 Today I Learned
-![Date](https://img.shields.io/badge/Start-2024.03.06-red) ![Update](https://img.shields.io/badge/update-2024.06.27-grean)
+![Date](https://img.shields.io/badge/Start-2024.03.06-red) ![Update](https://img.shields.io/badge/update-2024.07.03-grean)
 - 필자의 습관적인 나태함을 바로잡고자 부지런히 학습한 내용이나 개발관련 경험들을 기록하고자 한다.
 - 기존에 이미 공부한 내용은 복습한다 생각하고 천천히 작성한다.  
 
@@ -41,6 +41,7 @@
 - [엘리먼트 렌더링](https://github.com/one-west/TIL/blob/main/React/Element_Rendering.md)
 - [컴포넌트와 Props](https://github.com/one-west/TIL/blob/main/React/%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%99%80%20Props.md)
 - [Hook이란?](https://github.com/one-west/TIL/blob/main/React/Hook%EC%9D%B4%EB%9E%80%3F.md)
+- [Shared State와 합성-상속](https://github.com/one-west/TIL/blob/main/React/Shared%20State%EC%99%80%20%20%ED%95%A9%EC%84%B1-%EC%83%81%EC%86%8D.md#%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8Context)
 
 ### Computer Network
 - [WWW이란?](https://github.com/one-west/TIL/blob/main/Computer%20Network/WWW.md)
