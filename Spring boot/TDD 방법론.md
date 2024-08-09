@@ -1,6 +1,6 @@
 # TDD(Test Driven Development) 방법론
 
-> 학습 출처 : 스프링 입문 - 코드로 배우는 스프링 부트, 웹 MVC, DB 접근 기술 [김영한]
+> 출처 : https://inpa.tistory.com/entry/QA-📚-TDD-방법론-테스트-주도-개발
 
 ### 개요
 
@@ -59,6 +59,3 @@
 
 3. 구조에 얽매힌다.
     - 실제 코드가 더 중요한 상황인데도 불구하고 테스트 원칙 때문에 쉽게 넘어가지 못하는 그런 경우가 발생할 수 있다.
-
-### 출처 
-- https://inpa.tistory.com/entry/QA-📚-TDD-방법론-테스트-주도-개발
