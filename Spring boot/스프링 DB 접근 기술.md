@@ -337,3 +337,66 @@ public class JpaMemberRepository implements MemberRepository {
 개발자는 핵심 비즈니스 로직에 집중할 수 있음.
 
 ※ `스프링 데이터 JPA`는 `JPA`를 편리하게 사용하도록 도와주는 기술이기에 `JPA`를 먼저 학습한 후 `스프링 데이터 JPA`를 학습하는 것이 좋은 것 같다.
+
+- SpringConfig.java
+```java
+package com.example.demo.config;
+
+import com.example.demo.repository.MemberRepository;
+import com.example.demo.service.MemberService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class Springconfig {
+    
+    private final MemberRepository memberRepository;
+    
+    @Autowired
+    public Springconfig(@Qualifier("springDataJpaMemberRepository") MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+    }
+    
+    @Bean
+    public MemberService memberService() {
+        return new MemberService(memberRepository);
+    }
+```
+  
+- SpringDataJpaMemberRepository.java
+```java
+package com.example.demo.repository;
+
+import com.example.demo.domain.Member;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.Optional;
+
+public interface SpringDataJpaMemberRepository extends JpaRepository<Member, Long>, MemberRepository {
+    
+    @Override
+    Optional<Member> findByName(String name);
+}
+
+```
+- 스프링 데이터 JPA가 `SpringDataJpaMemberRepository`를 스프링 빈으로 자동 등록해준다.
+
+- `JpaRepository` 클래스를 들여다보면 공통으로 사용될 수 있는 메서드들이 이미 만들어져 있다.
+
+#### 스프링 데이터 JPA 제공 기능
+
+- 인터페이스를 통한 기본적인 CRUD
+
+- `findByName()`, `findByEmail()` 처럼 메서드 이름 만으로 조회 기능 제공
+
+- 페이징 기능 자동 제공
+
+> 참고 : 실무에서는 JPA와 스프링 데이터 JPA를 기본으로 사용하고, 복잡한 동적 쿼리는 Querydsl이라는 라이브러리를 사용하면 된다.
+> Querydsl을 사용하면 쿼리도 자바 코드로 안전하게 작성할 수 있고, 동적 쿼리도 편리하게 작성할 수 있다.
+> 이 조합으로 해결하기 어려운 쿼리는 JPA가 제공하는 네이티브 쿼리를 사용하거나, 앞서 학습한 스프링 JDdbcTemplate를 사용
+
+### AOP
+
+#### AOP가 필요한 상황
