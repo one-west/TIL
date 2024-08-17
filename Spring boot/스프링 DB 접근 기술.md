@@ -157,3 +157,183 @@ public class JdbcTemplateMemberRepository implements MemberRepository {
 - Catalog와 Schema의 차이
 
     <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FezMcz8%2Fbtr8KHMg1Ag%2FqvEW0uP7BfBOkgB2ZDuqGk%2Fimg.png">
+
+<br>
+
+### JPA
+
+- JPA는 기존의 반복 코드는 물론이고, 기본적인 SQL도 JPA가 직접 만들어서 실행해준다.
+- JPA를 사용하면, SQL과 데이터 중심의 설계에서 객체 중심의 설계로 패러다임을 전환을 할 수 있다.
+- JPA를 사용하면 개발 생산성을 크게 높일 수 있다.
+
+#### build.gradle에 implement 추가
+
+```java
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+//	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	runtimeOnly 'mysql:mysql-connector-java:8.0.33'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+```
+
+- `implementation 'org.springframework.boot:spring-boot-starter-jdbc'`는 내부에 jdbc 관련 라이브러리를 포함한다. 따라서 jdbc는 제거해도 된다.
+
+#### Spring boot에 JPA 설정 추가
+
+```java
+# MySql
+spring.datasource.url=jdbc:mysql://localhost:3306/my_db
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.datasource.username=root
+spring.datasource.password=1234
+
+# JPA
+spring.jpa.show-sql=true
+spring.jpa.hibernate.ddl-auto=none
+```
+
+- `show-sql` : JPA가 생성하는 SQL을 출력함
+
+- `ddl-auto` : JPA는 테이블을 자동으로 생성하는 기능을 제공하는데 `none`을 사용하면 해당 기능을 off 함
+
+    - `create`를 사용하면 Entity 정보를 바탕으로 테이블도 직접 생성해준다.
+
+### JPA Entity 매핑
+
+- Member.java
+```java
+package com.example.demo.domain;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
+public class Member {
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+    
+    private String name;
+    
+    public String getName() {
+        return name;
+    }
+    
+    public void setName(String name) {
+        this.name = name;
+    }
+    
+    public long getId() {
+        return id;
+    }
+    
+    public void setId(long id) {
+        this.id = id;
+    }
+    
+    public void setId(Long id) {
+        this.id = id;
+    }
+}
+```
+
+- SpringConfig.java
+```java
+package com.example.demo.config;
+
+import com.example.demo.repository.JpaMemberRepository;
+import com.example.demo.repository.MemberRepository;
+import com.example.demo.service.MemberService;
+import jakarta.persistence.EntityManager;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class Springconfig {
+
+    private EntityManager em;
+    
+    @Autowired
+    public Springconfig(EntityManager em) {
+        this.em = em;
+    }
+    
+    @Bean
+    public MemberService memberService() {
+        return new MemberService(memberRepository());
+    }
+    
+    @Bean
+    public MemberRepository memberRepository() {
+//        return new MemoryMemberRepository();
+//        return new JdbcMemberRepository(dataSource);
+//        return new JdbcTemplateMemberRepository(dataSource);
+        return new JpaMemberRepository(em);
+    }
+}
+```
+
+- JpaMemberRepository.java
+```java
+package com.example.demo.repository;
+
+import com.example.demo.domain.Member;
+import jakarta.persistence.EntityManager;
+
+import java.util.List;
+import java.util.Optional;
+
+public class JpaMemberRepository implements MemberRepository {
+    
+    private final EntityManager em;
+    
+    public JpaMemberRepository(EntityManager em) {
+        this.em = em;
+    }
+    
+    @Override
+    public Member save(Member member) {
+        em.persist(member);
+        return member;
+    }
+    
+    @Override
+    public Optional<Member> findById(Long id) {
+        Member member = em.find(Member.class, id);
+        return Optional.ofNullable(member);
+    }
+    
+    @Override
+    public Optional<Member> findByName(String name) {
+        List<Member> list = em.createQuery("select m from Member m where m.name = :name", Member.class)
+                .setParameter("name", name).getResultList();
+        return list.stream().findAny();
+    }
+    
+    @Override
+    public List<Member> findAll() {
+        em.createQuery("select m from Member m", Member.class);
+        return List.of();
+    }
+}
+```
+
+###  Spring data JPA
+
+스프링 부트와 JPA만 사용해도 개발 생산성이 정말 많이 증가하고, 개발해야할 코드도 확연히 줄어든다.
+
+여기에 스프링 데이터 JPA를 사용하면, 리포지토리에 구현 클래스 없이 인터페이스 만으로 개발을 완료할 수 있다.
+
+그리고 반복 개발해온 기본 CRUD 기능도 스프링 데이터 JPA가 모두 제공한다.
+
+개발자는 핵심 비즈니스 로직에 집중할 수 있음.
+
+※ `스프링 데이터 JPA`는 `JPA`를 편리하게 사용하도록 도와주는 기술이기에 `JPA`를 먼저 학습한 후 `스프링 데이터 JPA`를 학습하는 것이 좋은 것 같다.
