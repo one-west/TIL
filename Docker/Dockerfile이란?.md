@@ -72,7 +72,7 @@ dockerfile은 도커 이미지를 생성하기 위한 스크립트 파일
 ```docker
 docker build ${option} ${dockerfile directory}
 
-ex) docker build -t test.
+ex) docker build -t test .
 ```
 
 - 생성된 이미지를 컨테이너로 실행하기 위해서는 run 커맨드를 사용
