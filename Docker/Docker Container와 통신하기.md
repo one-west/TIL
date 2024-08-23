@@ -12,9 +12,11 @@
 
 ### 실습
 
-- `docker run --name test1 -d httpd`
-  
-- `docker run --name test2 -d -p 8080:80 httpd`
+```docker
+docker run --name test1 -d httpd
+
+docker run --name test2 -d -p 8080:80 httpd
+```
 
 - 설명
 
