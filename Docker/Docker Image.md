@@ -22,5 +22,49 @@
 - image_name : 생성할 이미지의 이름
 
 ```docker
-docker commit {container_name}{image_name}
+docker commit {container_name} {image_name}
 ```
+
+### Dockerfile로 이미지 생성하기
+
+```docker
+docker build ${option} ${dockerfile directory}
+```
+
+### docker 이미지 파일로 저장
+
+- 운영서버에서 이미지를 사용해야 할 때 사용함
+
+-  save/load 커맨드
+
+    - sava를 이용한 이미지 저장은 원본 이미지와 레이어를 동일하게 가져가는 형식으로 동작함
+
+    - save
+        
+        - 도커 이미지를 tar 파일로 추출
+ 
+        - `docker save -o test123.tar test123:latest`
+ 
+    - load
+
+        - 추출된 tar 파일을 이미지로 불러옴
+     
+        - `docker load -i test123.tar`
+
+-  export/import 커맨드
+
+    - export를 이용한 이미지 저장은 원본 이미지와 다르게 하나의 레이어로 통합되어 추출됨
+ 
+    - 이렇게 추출된 이미지는 다시 컨테이너로 가동하기 위해서는 별도의 작업이 필요
+ 
+    - export
+
+        - 도커 컨테이너를 tar 파일로 추출
+     
+        - `docker export test123 > test123.tar`
+    
+    - import
+ 
+        - 추출된 tar 파일을 이미지로 불러옴
+     
+        - `docker import test123.tar test123:version`
