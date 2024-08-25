@@ -61,7 +61,7 @@ docker build ${option} ${dockerfile directory}
 
         - 도커 컨테이너를 tar 파일로 추출
      
-        - `docker export {컨테이너 이름} > test123.tar`
+        - `docker export db_master > test123.tar`
     
     - import
  
