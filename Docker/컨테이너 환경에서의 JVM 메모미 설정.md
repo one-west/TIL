@@ -1,6 +1,6 @@
 # 컨테이너 환경에서의 JVM 메모미 설정
 
-> 
+> 학습 출처 : https://www.youtube.com/playlist?list=PLlTylS8uB2fDLJRJCXqUowsOViG-ZKnWy
 
 JVM은 기본적으로 물리적인 메모리를 할당하게 설정되어 있다.
 
