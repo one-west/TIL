@@ -16,7 +16,7 @@
 - [Docker Container와 통신하기](https://github.com/one-west/TIL/blob/main/Docker/Docker%20Container%EC%99%80%20%ED%86%B5%EC%8B%A0%ED%95%98%EA%B8%B0.md)
 - [Docker Compose](https://github.com/one-west/TIL/blob/main/Docker/Docker%20Compose.md)
 - [Docker Image](https://github.com/one-west/TIL/blob/main/Docker/Docker%20Image.md)
-- [컨테이너 환경에서의 JVM 메모미 설정](https://github.com/one-west/TIL/blob/main/Docker/%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88%20%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C%EC%9D%98%20JVM%20%EB%A9%94%EB%AA%A8%EB%AF%B8%20%EC%84%A4%EC%A0%95.md)
+- [컨테이너 환경에서의 JVM 메모리 설정](https://github.com/one-west/TIL/blob/main/Docker/%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88%20%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C%EC%9D%98%20JVM%20%EB%A9%94%EB%AA%A8%EB%A6%AC%20%EC%84%A4%EC%A0%95.md)
 
 ### Java
 - [Java IDE 설치](https://github.com/one-west/TIL/blob/main/Java/Java%20IDE%20install%20%EB%B0%A9%EB%B2%95.md)
