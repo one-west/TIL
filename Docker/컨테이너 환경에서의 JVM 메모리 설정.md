@@ -1,4 +1,4 @@
-# 컨테이너 환경에서의 JVM 메모미 설정
+# 컨테이너 환경에서의 JVM 메모리 설정
 
 > 학습 출처 : https://www.youtube.com/playlist?list=PLlTylS8uB2fDLJRJCXqUowsOViG-ZKnWy
 
@@ -58,3 +58,41 @@ docker run -m 2GB openjdk:8 java -XshowSettings:VM -version
 - 사용 이미지 : openjdk 8
 
 - ShowSettings:VM: VM settings를 보기 위한 설정
+
+### 실행 결과
+
+- VM settings 수치 (100MB)
+    - JDK 8 ~ 17 : 48.38MB
+    - 50% 적용
+
+- VM settings 수치 (256MB)
+    - JDK 8 ~ 17 : 121.818MB
+    - 50% 적용
+
+- VM settings 수치 (500MB)
+    - JDK 8 ~ 17 : 121.81MB
+    - 25% 적용
+
+- VM settings 수치 (512MB)
+    - JDK 8 ~ 17 : 123.75MB
+    - 25% 적용
+
+- VM settings 수치 (1024MB)
+    - JDK 8 ~ 17 : 247.50MB
+    - 50% 적용
+
+- VM settings 수치 (512MB)
+    - JDK 8 : 910.50MB
+    - JDK 11 ~ 17 : 1GB
+    - 25% 적용
+
+### 메모리 설정
+
+- 아래 명령어와 같이 할당 퍼센트를 설정할 수 있다.
+
+ ```docker
+docker run -m 4GB openjdk:8 java -XX:InitialRAMPercentage=50.0 -XX:MaxRAMPercentage=80.0 -XshowSettings:VM -version
+```
+
+- VM settings 수치 (4GB)
+    - Max, Heap Size : 3.2GB
