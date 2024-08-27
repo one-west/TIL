@@ -194,7 +194,7 @@ Team team = member.getTeam()
 
 애플리케이션은 자바라는 객체지향 언어로 개발하고 데이터는 관계형 데이터베이스에 저장해야 한다면 패러다임의 불일치 문제를 개발자가 중간에서 해결해야 한다.
 
-### 2.1 상속
+### 3.1 상속
 
 - 객체는 상속이라는 기능을 가지고 있지만, 테이블은 상속이 없다.
 
@@ -234,9 +234,9 @@ JPA를 사용해 Item을 상속받은 Album 객체를 저장하면
 jpa.persist(album);
 ```
 
->> JPA은 객체를 ITEM과 ALBUM 두 테이블에 나누어 저장한다.
+=> JPA은 객체를 ITEM과 ALBUM 두 테이블에 나누어 저장한다.
 
-### 2.2 연관관계
+### 3.2 연관관계
 
 객체는 참조를 사용해서 다른 객체와 연관관계를 가지고 참조에 접금해서 연관된 객체를 조회한다.
 
@@ -269,19 +269,9 @@ member.getTeam()은 가능하지만, team.getMember()는 참조가 없으므로 
 
 하지만, 테이블은 외래 키 하나로 MEMBER JOIN TEAM도 가능하지만, TEMA JOIN MEMBER 도 가능
 
-### 2.3 객체 그래프 탐색
+### 3.3 객체 그래프 탐색
 
-Member - Team         Category
-
-      |                                    |
-
-  Order  - OrderItem  - Item
-
-      |
-
-Delivery
-
-member.getOrder().getOrderItem()  —> 자유로운 객체 그래프 탐색
+`member.getOrder().getOrderItem()`  —> 자유로운 객체 그래프 탐색
 
 예를 들어 MemberDAO에서 member객체를 조회할 때 아래와 같은 SQL을 실행하여 조회한다면
 
@@ -308,7 +298,10 @@ H2 데이터베이스는 설치가 필요 없고 용량이 가벼우며 개발�
 - 표준 SQL의 대부분을 지원
 - 로컬환경 및 테스트 환경에서 많이 사용됨.
 
-http://www.h2database.com 
+http://www.h2database.com
+
+<img width="500" alt="H2_DB_이미지" src="https://github.com/user-attachments/assets/f62c34f7-d655-42bc-b058-4fcb7aa5e7f1">
+
 
 1. `All Platform`  다운로드 > 압축 풀기 
 
@@ -324,6 +317,9 @@ http://www.h2database.com
     - Password : asdfasdf
 
 - 연결 시도 시 에러나는 경우 아이콘 우측 클릭 > Create a new database
+
+
+4. 생성한 테이블
 
 ```sql
 CREATE TABLE MEMBER (
