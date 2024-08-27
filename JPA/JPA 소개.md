@@ -223,9 +223,11 @@ class Book extends Item {
 
 위의 예제에서 Album 객체를 저장하려면 이 객체를 분해해서 두 SQL을 만들어야 한다.
 
+```sql
 INSERT INTO ITEM …
 
 INSERT INTO ALBUM
+```
 
 JPA는 상속과 관련된 패러다임의 불일치 문제를 개발자 대신 해결해준다.
 
