@@ -43,6 +43,9 @@
 - [DB 접근 기술](https://github.com/one-west/TIL/blob/main/Spring%20boot/%EC%8B%9C%EC%9E%91%ED%99%98%EA%B2%BD.md)
 - [AOP](https://github.com/one-west/TIL/blob/main/Spring%20boot/%EC%8B%9C%EC%9E%91%ED%99%98%EA%B2%BD.md)
 
+### JPA
+- [JPA 소개](https://github.com/one-west/TIL/blob/main/JPA/JPA%20%EC%86%8C%EA%B0%9C.md)
+
 ### HTML-CSS
 - [CSS3 Flex Guide](https://github.com/one-west/TIL/blob/main/CSS/Flex%20Guide.md)
   
