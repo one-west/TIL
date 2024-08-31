@@ -6,7 +6,7 @@
 
 불필요한 복잡성을 제거해  리팩토링에 소요되는 시간을 줄임으로써 프로젝트 개발의 생산성을 높일 수 있다.
 
-## 단일 책임 원칙 SRP(Single Responsibility Principle)
+## 단일 책임 원칙 - SRP (Single Responsibility Principle)
 
 - 하나의 클래스는 하나의 책임만 가져야 한다.
 
