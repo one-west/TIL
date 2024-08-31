@@ -64,10 +64,26 @@ public class Main {
 ### 수정 후
 
 ```java
+abstract class Animal {
+    abstract void speak();
+}
+
 // 추상클래스를 상속만 하면 메소드 강제 구현 규칙으로 규격화만 하면 확장에 제한 없다 (opened)
 class Sheep extends Animal {
     void speak() {
         System.out.println("매에에");
+    }
+}
+
+class Cat extends Animal { // 상속
+    void speak() {
+        System.out.println("냐옹");
+    }
+}
+
+class Dog extends Animal { // 상속
+    void speak() {
+        System.out.println("멍멍");
     }
 }
 
