@@ -19,7 +19,7 @@
 
 - LSP는 한마디로 다형성을 지원하기 위한 원칙이다.
 
-### Ex
+## Ex
 
 ```java
 public void listData() {
