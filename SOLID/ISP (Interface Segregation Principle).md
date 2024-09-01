@@ -23,7 +23,7 @@
 ## Ex
 
 ```java
-interface ISmartPhone {
+public interface ISmartPhone {
     void call(String number); // 통화 기능
     void message(String number, String text); // 문제 메세지 전송 기능
     void wirelessCharge(); // 무선 충전 기능
@@ -33,7 +33,7 @@ interface ISmartPhone {
 ```
 
 ```java
-class S20 implements ISmartPhone {
+public class S20 implements ISmartPhone {
     public void call(String number) {
     }
 
@@ -50,7 +50,7 @@ class S20 implements ISmartPhone {
     }
 }
 
-class S21 implements ISmartPhone {
+public class S21 implements ISmartPhone {
     public void call(String number) {
     }
 
@@ -71,7 +71,7 @@ class S21 implements ISmartPhone {
 - 위 코드를 보면 최신 스마트폰 기종은 객체의 동작 모두가 필요하므로 ISP 원칙을 만족하지만, 구형 기종 스마트폰 클래스도 다뤄야 할 경우 문제가 생긴다.
 
 ```java
-class S3 implements ISmartPhone {
+public class S3 implements ISmartPhone {
     public void call(String number) {
     }
 
@@ -99,25 +99,25 @@ class S3 implements ISmartPhone {
 - 각각의 기능에 맞게 인터페이스를 잘게 분리하였다.
 
 ```java
-interface IPhone {
+public interface IPhone {
     void call(String number); // 통화 기능
     void message(String number, String text); // 문제 메세지 전송 기능
 }
 
-interface WirelessChargable {
+public interface WirelessChargable {
     void wirelessCharge(); // 무선 충전 기능
 }
 
-interface ARable {
+public interface ARable {
     void AR(); // 증강 현실(AR) 기능
 }
 
-interface Biometricsable {
+public interface Biometricsable {
     void biometrics(); // 생체 인식 기능
 }
 ```
 ```java
-class S21 implements IPhone, WirelessChargable, ARable, Biometricsable {
+public class S21 implements IPhone, WirelessChargable, ARable, Biometricsable {
     public void call(String number) {
     }
 
@@ -134,7 +134,7 @@ class S21 implements IPhone, WirelessChargable, ARable, Biometricsable {
     }
 }
 
-class S3 implements IPhone {
+public class S3 implements IPhone {
     public void call(String number) {
     }
 
