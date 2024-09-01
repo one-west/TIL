@@ -24,36 +24,36 @@
 
 ### Ex
 ```java
-class Employee {
-    String name;
-    String positon;
+public class Calculation {
+    private String name;
+    private String positon;
 
-    Employee(String name, String position) {
+    public Calculation(String name, String position) {
         this.name = name;
         this.positon = position;
     }
 
-	// * 초과 근무 시간을 계산하는 메서드 (두 팀에서 공유하여 사용)
-    void calculateExtraHour() {
+    // 초과 근무 시간을 계산하는 메서드 (두 팀에서 공유하여 사용)
+    public void calculateExtraHour() {
         // ...
     }
 
-    // * 급여를 계산하는 메서드 (회계팀에서 사용)
-    void calculatePay() {
+    // 급여를 계산하는 메서드 (회계팀에서 사용)
+    public void calculatePay() {
         // ...
         this.calculateExtraHour();
         // ...
     }
 
-    // * 근무시간을 계산하는 메서드 (인사팀에서 사용)
-    void reportHours() {
+    // 근무시간을 계산하는 메서드 (인사팀에서 사용)
+    public void reportHours() {
         // ...
         this.calculateExtraHour();
         // ...
     }
 
-    // * 변경된 정보를 DB에 저장하는 메서드 (기술팀에서 사용)
-    void saveDababase() {
+    // 변경된 정보를 DB에 저장하는 메서드 (기술팀에서 사용)
+    public void saveDababase() {
         // ...
     }
 }
@@ -63,65 +63,68 @@ class Employee {
 
 ### 수정 후
 ```java
-// * 통합 사용 클래스
-class EmployeeFacade {
+public class CalculationFacade {
     private String name;
     private String positon;
 
-    EmployeeFacade(String name, String position) {
+    public CalculationFacade(String name, String position) {
         this.name = name;
         this.positon = position;
     }
     
-    // * 급여를 계산하는 메서드 (회계팀 클래스를 불러와 에서 사용)
-    void calculatePay() {
+    // 급여를 계산하는 메서드 (회계팀 클래스를 불러와 에서 사용)
+    public void calculatePay() {
         // ...
         new PayCalculator().calculatePay();
         // ...
     }
 
-    // * 근무시간을 계산하는 메서드 (인사팀 클래스를 불러와 에서 사용)
-    void reportHours() {
+    // 근무시간을 계산하는 메서드 (인사팀 클래스를 불러와 에서 사용)
+    public void reportHours() {
         // ...
         new HourReporter().reportHours();
         // ...
     }
 
-    // * 변경된 정보를 DB에 저장하는 메서드 (기술팀 클래스를 불러와 에서 사용)
-    void EmployeeSaver() {
+    // 변경된 정보를 DB에 저장하는 메서드 (기술팀 클래스를 불러와 에서 사용)
+    public void EmployeeSaver() {
         new EmployeeSaver().saveDatabase();
     }
 }
 
-// * 회계팀에서 사용되는 전용 클래스
-class PayCalculator {
-    // * 초과 근무 시간을 계산하는 메서드
-    void calculateExtraHour() {
+// 회계팀에서 사용되는 전용 클래스
+public class PayCalculator {
+
+    // 초과 근무 시간을 계산하는 메서드
+    public void calculateExtraHour() {
         // ...
     }
-    void calculatePay() {
+
+    public void calculatePay() {
         // ...
         this.calculateExtraHour();
         // ...
     }
 }
 
-// * 인사팀에서 사용되는 전용 클래스
-class HourReporter {
-    // * 초과 근무 시간을 계산하는 메서드
-    void calculateExtraHour() {
+// 인사팀에서 사용되는 전용 클래스
+public class HourReporter {
+
+    // 초과 근무 시간을 계산하는 메서드
+    public void calculateExtraHour() {
         // ...
     }
-    void reportHours() {
+
+    public void reportHours() {
         // ...
         this.calculateExtraHour();
         // ...
     }
 }
 
-// * 기술팀에서 사용되는 전용 클래스
-class EmployeeSaver {
-    void saveDatabase() {
+// 기술팀에서 사용되는 전용 클래스
+public class EmployeeSaver {
+    public void saveDatabase() {
         // ...
     }
 }
