@@ -18,18 +18,16 @@
 
 ### Ex
 ```java
-class Animal {
+public class Animal {
 	String type;
     
-    Animal(String type) {
+    public Animal(String type) {
     	this.type = type;
     }
 }
 
-// 동물 타입을 받아 각 동물에 맞춰 울음소리를 내게 하는 클래스 모듈
-class HelloAnimal {
-	// 기능을 확장하기 위해서는 클래스 내부 구성을 일일히 수정해야 하는 번거로움이 생긴다.
-    void hello(Animal animal) {
+public class HelloAnimal {
+    public void hello(Animal animal) {
         if (animal.type.equals("Cat")) {
             System.out.println("냐옹");
         } else if (animal.type.equals("Dog")) {
@@ -61,41 +59,43 @@ public class Main {
 }
 ```
 
+- HelloAnimal 클래스의 기능을 확장하기 위해서는 클래스 내부 구성을 일일히 수정해야 한다.
+
 ### 수정 후
 
 ```java
-abstract class Animal {
-    abstract void speak();
+public abstract class Animal {
+    public abstract void speak();
 }
 
-// 추상클래스를 상속만 하면 메소드 강제 구현 규칙으로 규격화만 하면 확장에 제한 없다 (opened)
-class Sheep extends Animal {
-    void speak() {
+// opened
+public class Sheep extends Animal {
+    public void speak() {
         System.out.println("매에에");
     }
 }
 
-class Cat extends Animal { // 상속
-    void speak() {
+public class Cat extends Animal { // 상속
+    public void speak() {
         System.out.println("냐옹");
     }
 }
 
-class Dog extends Animal { // 상속
-    void speak() {
+public class Dog extends Animal { // 상속
+    public void speak() {
         System.out.println("멍멍");
     }
 }
 
-class Lion extends Animal {
-    void speak() {
+public class Lion extends Animal {
+    public void speak() {
         System.out.println("어흥");
     }
 }
 
-// 기능 확장으로 인한 클래스가 추가되어도, 더이상 수정할 필요가 없어진다 (closed)
-class HelloAnimal {
-    void hello(Animal animal) {
+// closed
+public class HelloAnimal {
+    public void hello(Animal animal) {
         animal.speak();
     }
 }
@@ -117,6 +117,10 @@ public class Main {
     }
 }
 ```
+
+- 추상클래스를 상속만 하면 메소드 강제 구현 규칙으로 규격화만 하면 확장에 제한 없다.
+
+- 기능 확장으로 인한 클래스가 추가되어도, 더이상 수정할 필요가 없어진다.
 
 ### 참고 자료
 
