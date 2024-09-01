@@ -16,7 +16,7 @@
 
 - 그렇기에 기존의 코드를 변경하지 않고, 새로운 코드를 추가하는 것을 말한다.
 
-### Ex
+## Ex
 ```java
 public class Animal {
 	String type;
