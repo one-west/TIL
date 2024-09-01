@@ -22,7 +22,7 @@
 
 - 결론은 SRP는 프로그램의 유지보수성을 높이기 위한 설계 기법이다.
 
-### Ex
+## Ex
 ```java
 public class Calculation {
     private String name;
