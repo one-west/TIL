@@ -37,11 +37,15 @@
 
 ### Spring boot
 - [시작환경](https://github.com/one-west/TIL/blob/main/Spring%20boot/%EC%8B%9C%EC%9E%91%ED%99%98%EA%B2%BD.md)
+- [스프링부트 소개](https://github.com/one-west/TIL/blob/main/Spring%20boot/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%20%EC%86%8C%EA%B0%9C.md)
 - [웹 개발 기초](https://github.com/one-west/TIL/blob/main/Spring%20boot/%EC%8A%A4%ED%94%84%EB%A7%81%20%EC%9B%B9%20%EA%B0%9C%EB%B0%9C%20%EA%B8%B0%EC%B4%88.md)
+- [스프링부트의 구조](https://github.com/one-west/TIL/blob/main/Spring%20boot/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%9D%98%20%EA%B5%AC%EC%A1%B0.md)
+- [스프링부트 테스트](https://github.com/one-west/TIL/blob/main/Spring%20boot/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%20%ED%85%8C%EC%8A%A4%ED%8A%B8.md)
 - [빈과 의존 관계](https://github.com/one-west/TIL/blob/main/Spring%20boot/%EC%8B%9C%EC%9E%91%ED%99%98%EA%B2%BD.md)
 - [TDD 방법론](https://github.com/one-west/TIL/blob/main/Spring%20boot/%EC%8B%9C%EC%9E%91%ED%99%98%EA%B2%BD.md)
 - [DB 접근 기술](https://github.com/one-west/TIL/blob/main/Spring%20boot/%EC%8B%9C%EC%9E%91%ED%99%98%EA%B2%BD.md)
 - [AOP](https://github.com/one-west/TIL/blob/main/Spring%20boot/%EC%8B%9C%EC%9E%91%ED%99%98%EA%B2%BD.md)
+
 
 ### JPA
 - [JPA 소개](https://github.com/one-west/TIL/blob/main/JPA/JPA%20%EC%86%8C%EA%B0%9C.md)
