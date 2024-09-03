@@ -70,6 +70,14 @@
 - [Python 기본문법](https://github.com/one-west/TIL/blob/main/Python/python%20%EA%B8%B0%EB%B3%B8%EB%AC%B8%EB%B2%95.md)
 - [Python 컬렉션](https://github.com/one-west/TIL/blob/main/Python/Python%20%EC%BB%AC%EB%A0%89%EC%85%98(Collection).md)
 
+### SOLID
+
+- [SRP (Single Responsibility Principle)](https://github.com/one-west/TIL/blob/main/SOLID/SRP%20(Single%C2%A0Responsibility%C2%A0Principle).md)
+- [OCP (Open Closed Principle)](https://github.com/one-west/TIL/blob/main/SOLID/OCP%20(Open%20Closed%20Principle).md)
+- [LSP (Liskov Substitution Principle)](https://github.com/one-west/TIL/blob/main/SOLID/LSP%20(Liskov%20Substitution%20Principle).md)
+- [ISP (Interface Segregation Principle)](https://github.com/one-west/TIL/blob/main/SOLID/ISP%20(Interface%20Segregation%20Principle).md)
+- [DIP (Dependency Inversion Principle)](https://github.com/one-west/TIL/blob/main/SOLID/DIP%20(Dependency%20Inversion%20Principle).md)
+
 ### Design Pattern
 - [Singleton pattern](https://github.com/one-west/TIL/blob/main/Design%20Pattern/Singleton%20pattern.md)
 
