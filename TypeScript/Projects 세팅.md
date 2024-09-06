@@ -110,4 +110,6 @@ export default () => {
 
 ### 참고 자료
 
-- 대학 수업 중
+- 대학 24년도 2학기 수업 중
+
+- https://stackoverflow.com/questions/25093276/node-js-windows-error-enoent-stat-c-users-rt-appdata-roaming-npm
