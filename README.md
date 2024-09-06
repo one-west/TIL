@@ -60,7 +60,7 @@
 
 ### TypeScript
 - [TypeScript 소개](https://github.com/one-west/TIL/blob/main/TypeScript/TypeScript%20%EC%86%8C%EA%B0%9C.md)
-- [Typescript 프로젝트 세팅](https://github.com/one-west/TIL/blob/main/TypeScript/Projects%20%EC%84%B8%ED%8C%85.md)
+- [Typescript 프로젝트 세팅](https://github.com/one-west/TIL/blob/main/TypeScript/TypeScript%20Projects%20%EC%84%B8%ED%8C%85.md)
 
 ### React
 - [React 시작하기](https://github.com/one-west/TIL/blob/main/React/React%20%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0.md)
