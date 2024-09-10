@@ -49,6 +49,7 @@
 
 ### JPA
 - [JPA 소개](https://github.com/one-west/TIL/blob/main/JPA/JPA%20%EC%86%8C%EA%B0%9C.md)
+- [JPA 프로젝트 구성](https://github.com/one-west/TIL/blob/main/JPA/JPA%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EA%B5%AC%EC%84%B1.md)
 
 ### HTML-CSS
 - [CSS3 Flex Guide](https://github.com/one-west/TIL/blob/main/CSS/Flex%20Guide.md)
