@@ -1,5 +1,12 @@
 # 프로젝트 구성
 
+## 목차
+
+- [데이터베이스 방언](#데이터베이스-방언)
+- [엔티티 매니저 설정](#엔티티-매니저-설정)
+- [트랜잭션 관리](#트랜잭션-관리)
+- [JPQL](#JPQL)
+
 ### pom.xml 작성
 
 ```xml
@@ -400,4 +407,6 @@ List<Member> memberList = em.createQuery("select m from Member m", Member.class)
 
 ### 학습 출처
 
--
+- Java ORM 표준 JPA 프로그래밍 [김영한]
+
+- 스프링 부트 3 벡엔드 개발자 되기 [신성영]
