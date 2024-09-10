@@ -1,7 +1,5 @@
 # JPA 소개
 
-> 학습출처 : 대학 전공 수업
-
 ### 목차
 
 - [1. JPA란 무엇인가?](#1-jpa란-무엇인가)
@@ -334,3 +332,9 @@ CREATE TABLE MEMBER (
 
 INSERT INTO MEMBER(ID,NAME,AGE) VALUES('user1','TEST',10)
 ```
+
+### 학습 출처
+
+- Java ORM 표준 JPA 프로그래밍 [김영한]
+
+- 스프링 부트 3 벡엔드 개발자 되기 [신성영]
