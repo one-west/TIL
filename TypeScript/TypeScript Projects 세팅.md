@@ -7,7 +7,7 @@
 ## 프로젝트 생성
 
 ```shell
-npx i create-react-app myproject --template typescript
+npx create-react-app myproject --template typescript
 ```
 
 ### 트러블 슈팅
