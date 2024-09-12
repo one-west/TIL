@@ -97,13 +97,11 @@ public enum RoleType {
 <property name="hibernate.hbm2ddl.auto" value="create"/>
 ```
 
-<aside>
-💡 스키마 자동 생성기능이 만든 DDL은 운영 환경에서 사용할 만큼 완벽하지는 않으므로 개발 환경에서 사용하거나 참고하는 정도로 사용
+> 💡 스키마 자동 생성기능이 만든 DDL은 운영 환경에서 사용할 만큼 완벽하지는 않으므로 개발 환경에서 사용하거나 참고하는 정도로 사용
 
-</aside>
-
-| create | 기존 테이블을 삭제하고 새로 생성한다. DROP + CREATE |
+|설정값|설명|
 | --- | --- |
+| create | 기존 테이블을 삭제하고 새로 생성한다. DROP + CREATE |
 | create-drop | create 속성에 추가로 애플리케이션을 종료할 때 생성한 DDL을 제거한다. DROP + CREATE + DROP |
 | update | 데이터베이스 테이블과 엔티티 매핑정보를 비교해서 변경 사항만 수정 |
 | validate | 데이터베이스 테이블과 엔티티 매핑정보를 비교해서 차이가 있으면 경고를 남기고 애플리케이션을 실행하지 않는다.  DDL을 수정하지는 않는다. |
@@ -112,7 +110,9 @@ public enum RoleType {
 ## 이름 매핑 전략
 
 - 자바 : roleType 과 같은 카멜(Camel) 표기법
+
 - 데이터베이스 : role_type 과 같은 언더스코어(_) 사용
+
 - 하이버네이트는 org.hibernate.cfg.ImprovedNamingStrategy (hibernate 4.x) 를 통해 테이블 명이나 컬럼명이 생략되면 자바의 카멜 → 테이블의 언더스코어 표기법으로 매핑
 
 ```java
@@ -167,15 +167,20 @@ alter table member
 ## 기본 키 매핑 (primary key)
 
 - 직접 할당 : 기본 키를 애플리케이션에서 직접 할당
+
 - 자동 생성
+
     - IDENTITY : 기본 키 생성을 데이터베이스에 위임한다.
+
     - SEQUENCE : 데이터베이스 시퀀스를 사용해 기본 키 할당
+
     - TABLE : 키 생성 테이블 사용
 
 ## 필드와 컬럼 매핑
 
-| @Column | 컬럼을 매핑 |
+|어노테이션|설명|
 | --- | --- |
+| @Column | 컬럼을 매핑 |
 | @Enumerated | 자바의 enum 타입을 매핑 |
 | @Temporal | 날짜 타입을 매핑 |
 | @Lob | BLOB, CLOB 타입을 매핑 |
