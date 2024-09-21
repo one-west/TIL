@@ -10,6 +10,10 @@
 
 ## Firebase 적용하기
 
+```shell
+npm i firebase
+```
+
 - 아래 코드는 Firebase 설정파일
 
 ```ts
