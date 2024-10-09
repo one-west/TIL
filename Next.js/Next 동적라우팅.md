@@ -56,4 +56,6 @@
 
 ### 학습 출처
 
+- [교재] 실전에서 바로 쓰는 Next.js [저자] : 미셸 리바 (Michele Riva)
+
 - https://nextjs.org/docs/pages/building-your-application/routing/dynamic-routes
