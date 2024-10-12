@@ -475,3 +475,10 @@ public void setTeam(Team team) {
     team.getMembers().add(this);
 }
 ```
+
+### 학습 출처
+
+- Java ORM 표준 JPA 프로그래밍 [김영한]
+
+- 스프링 부트 3 벡엔드 개발자 되기 [신성영]
+
