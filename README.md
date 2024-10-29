@@ -46,6 +46,8 @@
 - [스프링 DB 접근 기술](https://github.com/one-west/TIL/blob/main/Spring%20boot/%EC%8A%A4%ED%94%84%EB%A7%81%20DB%20%EC%A0%91%EA%B7%BC%20%EA%B8%B0%EC%88%A0.md)
 - [스프링 AOP](https://github.com/one-west/TIL/blob/main/Spring%20boot/%EC%8A%A4%ED%94%84%EB%A7%81%20AOP.md)
 - [스프링 REST API](https://github.com/one-west/TIL/blob/main/Spring%20boot/%EC%8A%A4%ED%94%84%EB%A7%81%20REST%20API.md)
+- [스프링 Application 설정 및 검사](https://github.com/one-west/TIL/blob/main/Spring%20boot/%EC%8A%A4%ED%94%84%EB%A7%81%20%20Application%20%EC%84%A4%EC%A0%95%20%EB%B0%8F%20%EA%B2%80%EC%82%AC.md)
+- [스프링 시큐리티](https://github.com/one-west/TIL/blob/main/Spring%20boot/%EC%8A%A4%ED%94%84%EB%A7%81%20%EC%8B%9C%ED%81%90%EB%A6%AC%ED%8B%B0.md)
 
 ### JPA
 - [JPA 소개](https://github.com/one-west/TIL/blob/main/JPA/JPA%20%EC%86%8C%EA%B0%9C.md)
