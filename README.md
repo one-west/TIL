@@ -1,5 +1,5 @@
 # 나의 Today I Learned
-![Date](https://img.shields.io/badge/Start-2024.03.06-red) ![Update](https://img.shields.io/badge/update-2024.09.06-grean)
+![Date](https://img.shields.io/badge/Start-2024.03.06-red) ![Update](https://img.shields.io/badge/update-2024.11.02-grean)
 - 필자의 습관적인 나태함을 바로잡고자 부지런히 학습한 내용이나 개발관련 경험들을 기록하고자 한다.
 - 기존에 이미 공부한 내용은 복습한다 생각하고 천천히 작성한다.  
 
@@ -74,7 +74,11 @@
 - [Shared State와 합성-상속](https://github.com/one-west/TIL/blob/main/React/Shared%20State%EC%99%80%20%20%ED%95%A9%EC%84%B1-%EC%83%81%EC%86%8D.md#%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8Context)
 
 ### Next.js
-- [Next.js 시작하기](https://github.com/one-west/TIL/blob/main/Next.js/Next%20%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0.md)
+- [Next 시작하기](https://github.com/one-west/TIL/blob/main/Next.js/Next%20%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0.md)
+- [Next 프로젝트 구조](https://github.com/one-west/TIL/blob/main/Next.js/Next%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EA%B5%AC%EC%A1%B0.md)
+- [Next 렌더링 전략](https://github.com/one-west/TIL/blob/main/Next.js/Next%20%EB%A0%8C%EB%8D%94%EB%A7%81%20%EC%A0%84%EB%9E%B5.md)
+- [Next 동적라우팅](https://github.com/one-west/TIL/blob/main/Next.js/Next%20%EB%8F%99%EC%A0%81%EB%9D%BC%EC%9A%B0%ED%8C%85.md)
+- [Next 이미지 컴포넌트](https://github.com/one-west/TIL/blob/main/Next.js/Next%20Image%20Component.md)
 
 ### Computer Network
 - [WWW이란?](https://github.com/one-west/TIL/blob/main/Computer%20Network/WWW.md)
