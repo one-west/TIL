@@ -91,3 +91,8 @@ export default function About() {
 }
 ```
 
+### 학습 출처
+
+- [교재] 실전에서 바로 쓰는 Next.js [저자] : 미셸 리바 (Michele Riva)
+
+- https://https://recodelog.com/blog/next/image-component
