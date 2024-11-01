@@ -4,7 +4,9 @@
 
 - Next.js에서 이미지 컴포넌트를 사용하면 이미지를 자동으로 최적화 할 수 있고, 브라우저에서 동적으로 사이즈 할당하여 로딩한다.
 
-## 누적 레이아웃 이동 (CLS: Cumulative Layout Shift)
+## Image Component 를 사용하지 않을 시 발생하는 문제점
+
+### 누적 레이아웃 이동 (CLS: Cumulative Layout Shift)
 
 - 정적 자원 중 이미지 파일은 SEO에 많은 영향을 미친다.
 
@@ -20,7 +22,7 @@
 
 ![예시 이미지](https://www.debugbear.com/public/docs/cumulative-layout-shift/cls-filmstrip.png)
 
-### Image Component
+## Image Component 사용법
 
 #### local 방식
 
@@ -88,3 +90,4 @@ export default function About() {
   );
 }
 ```
+
