@@ -1,4 +1,4 @@
-# TypeScript로 X(구: 트위터) 클론코딩 하기 (1)
+# TypeScript로 X(구: 트위터) 클론 코딩하기 (2)
 
 ## Firebase 란?
 
