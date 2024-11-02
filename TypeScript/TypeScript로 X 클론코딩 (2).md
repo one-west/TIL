@@ -196,3 +196,7 @@ export default App;
 
 - 전체 소스
     - https://github.com/one-west/TypeScript
+
+### 학습출처
+
+- 러닝 타입스크립트(Josh Goldberg)[한빛미디어][2023]
