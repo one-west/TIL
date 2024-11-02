@@ -1,4 +1,4 @@
-# TypeScript로 X(구: 트위터) 클론코딩하기
+# TypeScript로 X(구: 트위터) 클론코딩하기 (2)
 
 [~ Firebase로 로그인 구현에서 이어짐](https://github.com/one-west/TIL/blob/main/TypeScript/Firebase%EB%A5%BC%20%EC%A0%81%EC%9A%A9%ED%95%98%EC%97%AC%20%EB%A1%9C%EA%B7%B8%EC%9D%B8.md)
 
