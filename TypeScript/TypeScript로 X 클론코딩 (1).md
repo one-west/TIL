@@ -215,6 +215,4 @@ const errorMsgGroups: errorMsgGroupType = {
 
 ### 학습출처
 
-- 대학 24년도 2학기 수업 중
-
 - 러닝 타입스크립트(Josh Goldberg)[한빛미디어][2023]
