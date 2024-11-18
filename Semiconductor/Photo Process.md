@@ -24,21 +24,21 @@
 
 ![Photo 공정의 단계](https://images.velog.io/images/katie505/post/c0f8fb2b-eb02-4b0b-992c-2c7534dd3ca2/image.png)
 
-- 도포(P.R 코팅)
-
-    - PR(Photo Resist)을 Wafer의 전면에 고르게 덮는 공정으로 Track 장비에서 이루어지고, Spin Spray 방식이다
-
+- HMDS(Hexa Methylene DiSiloxane)
+    
     - Adhesion(접착) : Wafer 위에 PR이 잘 붙도록 "화학처리"를 해주는 공정(풀 역할)
 
     - Track 장비에서 가압시킨 N2 가스가 HMDS를 이동시키는 기상도포방식
  
-    - HMDS(Hexa Methylene DiSiloxane) : Wafer Silicon과 화학반응을 일으켜 접착성을 향상시키는 역할을 한다.
+    - Wafer Silicon과 화학반응을 일으켜 접착성을 향상시키는 역할을 한다.
+
+- 도포(P.R 코팅)
+
+    - PR(Photo Resist)을 Wafer의 전면에 고르게 덮는 공정으로 Track 장비에서 이루어지고, Spin Spray 방식이다
 
 - 노광(Exposure)
 
     - 도포 단계에서 코팅된 PR 위에 Pattern 형태의 빛을 쪼여서 감광 물질을 반응시키는 공정으로 Stepper 혹은 Scanner 장비에서 이루어짐 
-
-
 
 - 현상(Develop)
 
