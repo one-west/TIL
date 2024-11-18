@@ -70,6 +70,66 @@
 
 - Stepper : 마스크 패턴을 웨이퍼에 반복적으로 투영하며, 주로 특정 영역만 노광하는 데 사용
 
+### Photo Resist
+
+- 광(Photo) 반응에 의하여 비 노광 영역고 노광 영역 간의 용해도 차이가 발생하여, 현상액에 의하여 패턴을 형성하는 화학 재료
+
+- 마스크에서 전사된 원판 형상을 패턴호 하는 역할과 후속 식각 공정에서 막(Resistance) 역할 => Photo + Resist
+
+- Wafer에 얇게 Coating 한 후 선택적으로 빛을 노출시킨 후 Development 과정을 거치면 노출, 또는 노출되지 않았던 Resist가 제거되면서 패턴이 나타나게 됨
+
+    - Positive Resist : 빛에 노출되었던 Resist가 Development 과정에서 제거되는 형태
+ 
+    - Negative Resist : 빛에 노출되지 않았던 부분이 제거되는 형태
+
+- 카본(C)이 포함된 유기고분자로써 자외선에 노출될 때 그 고분자 사슬(PalymerChain)의 화학적 구조가 변하는 물질
+
+- 흡수되는 파장대역에 따라 (g-Line, i-Line, Deep UV, X-ray, Elctron) 각각의 특성에 맞는 Resist가 사용, 개발되고 있음
+
+- g- : 436nm, i- : 365nm, KrF : 248nm, ArF : 193nm
+  
+- PR Coating
+
+    - Base Resin (Polymer, 고분자)
+ 
+    - Organic Solvent (유기용제)
+ 
+    - Photoactive compound : 빛과 반응하여 Polymer 결합을 끊어주는 이온 물질을 생성
+ 
+    - Resin : Polymer 합성물질로 Chain 형태로 결합되어 있다
+ 
+    - Solvent : PAC와 Resin의 점도를 결정
+
+- E.B.R (Edge Bead Removal)
+
+    - Wafer 가장자리에 존재하는 PR을 Thinner 등을 이용하여 제거하는 공정으로써 Coating과 동시에 진행되는 것이 일반적
+ 
+    - Edge의 PR은 Defect를 일으킬 수 있다
+ 
+- Soft Bake
+
+    - Bake는 PR이 Coating된 Wafer를 Track장비의 Oven에서 일정한 온도로 구워내는 공정
+ 
+    - 비교적 낮은 온도에서 Bake하여 Soft Bake라고 하며, PR의 점성을 향상시켜 Wafer 표면과의 결합력을 증가시키고, 구조를 견고하게 한다.
+ 
+- Exposure
+
+    - Exposure 공정은 빛과 그림자를 이용해 Pattern을 복사하는 공정
+ 
+    - Pre Align : 진행할 공정에 맞는 Step의 마스크를 마스크 홀더(Holder)에 끼워 장비내의 마스크 위치에 정확하게 넣는 것
+ 
+### Lithography
+
+- DUV 시스템 적용에 따른 Wavelength Scaling
+
+- Imaging System 발전에 따른 NA scaling
+
+- Low k1 scaling
+
+### 파장이 점점 작아지는 이유?
+
+- ※ 더욱 작고 미세한 패턴을 분해해내기 위해서는 그에 걸맞는 짧은 파장을 이용해야 함
+
 ### 학습 출처
 
 - 대림대학교 [부트캠프사업] 반도체입문 온라인 수업
