@@ -1,6 +1,4 @@
-# 반도체 공정과정
-
-## Photo Procss
+# Photo Procss
 
 ### 사전적 의미의 Photo 공정
 
