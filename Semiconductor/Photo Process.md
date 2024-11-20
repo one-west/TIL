@@ -48,6 +48,8 @@
  
     - Proximity : Mask와 wafer 사이에 일정 간격을 유지함으로써 Contact방식의 단점을 극복했지만 빛의 회절, 발산으로 인한 원치 않는 Pottern 변화를 일으키게 된다.
 
+    - Projection :  Contact 및 Proximity방식의 문제점을 해결 보완한 방식, Lens를 사용함으로써 Mask대 Pattern의 비율 조정이 가능하다.
+
 - 현상(Develop)
 
     - 노광이 끝난 웨이퍼 위에 현상용액을 분사하여 노광 시 UV Light와 반응한 감광 물질 중 필요치 않는 부분을 제거하는 공정. Track 장비에서 이루어짐
