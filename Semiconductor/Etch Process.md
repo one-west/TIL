@@ -194,5 +194,23 @@
  
     - 생성된 이온들과 라디칼이 Etch 하고자 하는 박막과 반응이 일어나 Etch 하게 됨
 
+### Loading Effect
+
+- 패턴밀도(Density)차이에 따라 식각속도가 달라지는 현상
+
+- 동일한 양의 반응물을 공급하면(플라즈마 밀도를 같게 할 경우), 식각면적이 증가할수록 식각률(E/R)은 감소하게 된다.
+
+> ※ Etching 되는 부분이 많이 노출되어 있는 영역
+> Etching Reaction에 의한 에칭가스의 소모 증가 -> 에칭가스 농도감소 -> 에층 속도 감소
+
+- 해결방법
+
+    - High Pressure
+    - High Source Power
+    - Low Bias Power(Slope)
+    - Large Gas Flow
+    - Etching되는 것과 똑같은 물질로 전극 제작
+    - lon bombardment(이온폭탄)에 의한 에칭속도가 제어
+
 ### 학습 출처
 - 대림대학교 [부트캠프사업] 반도체입문 온라인 수업
