@@ -123,3 +123,6 @@
 - Oxide quality와 Oxide-Silicon interface가 개선됨
 - 보통 HCI(3% ~ 7%)이 chlorine source로 사용되었다가 부식성 때문에 TCA(trichloroethan) or TCE(trichloroethylene) 등이 대체되어 넓게 사용되고 있음
 
+### 학습 출처
+
+- 대림대학교 [부트캠프사업] 반도체입문 온라인 수업
