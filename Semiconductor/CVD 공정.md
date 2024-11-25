@@ -94,46 +94,85 @@
     </tr>
     <tr>
         <td rowspan=3>APCVD</td>
-        <td >간단한 장치</td>
-        <td >Poor step coverage</td>
-        <td >Low temp oxide (BPSG)</td>
+        <td>간단한 장치</td>
+        <td>Poor step coverage</td>
+        <td>Low temp oxide (BPSG)</td>
     </tr>
     <tr>
-        <td >빠른 속도</td>
-        <td >Particle</td>
-        <td >필림 평탄화 (Planarization)</td>
+        <td>빠른 속도</td>
+        <td>Particle</td>
+        <td>필림 평탄화 (Planarization)</td>
     </tr>
     <tr>
-        <td >낮은 온도(500 ~ 550℃)</td>
-        <td >낮은 효율</td>
+        <td>낮은 온도(500 ~ 550℃)</td>
+        <td>낮은 효율</td>
     </tr>
     <tr>
         <td rowspan=3>LPCVD</td>
-        <td >탁월한 순도</td>
-        <td >High temperature (400 ~ 900℃)</td>
-        <td >High temp oxide (SiO2)</td>
+        <td>탁월한 순도</td>
+        <td>High temperature (400 ~ 900℃)</td>
+        <td>High temp oxide (SiO2)</td>
     </tr>
     <tr>
-        <td >균일도 우수</td>
-        <td >Low Deposition Rate</td>
+        <td>균일도 우수</td>
+        <td>Low Deposition Rate</td>
+        <td>Si Nitride (SiN)</td>
     </tr>
     <tr>
-        <td >탁월한 Step Coverage</td>
-        <td >High temperature</td>
-        <td >High temp oxide (SiO2)</td>
+        <td>탁월한 Step Coverage</td>
+        <td></td>
+        <td>텅스텐 : CVD방식의 유일한 금속막</td>
     </tr>
     <tr>
         <td rowspan=3>PECVD</td>
-        <td >낮은 온도(350 ~ 400℃)</td>
-        <td >Low temp oxide</td>
+        <td>낮은 온도(350 ~ 400℃)</td>
+        <td>Chemical 오염</td>
+        <td>IMD 절연막 (SiO2, SiON, SiN)</td>
     </tr>
-    
+    <tr>
+        <td>빠른 속도</td>
+        <td>Particle</td>
+        <td>Passivation</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Poor Step coverage</td>
+        <td></td>
+    </tr>
 </table>
 
-|Process|Advantage|Disadvantage|Application|
-|--|--|--|--|
-|APCVD|간단한장치, 빠른 속도, 낮은 온도|Poor step |
-|LPCVD|Si : 주입되는 가스(SiH4, ...)|
+### CVD 박막이 갖추어야 할 특성
 
-|PECVD|Oxide(SiO2)가 실리콘 기판으로부터 증착, 위, 아래로 성장|
+- 우수한 단차피복
+- 높은 종횡비
+- 박막의 우수한 균일도, 순도, 밀도
+- 박막과 기판과의 점착력이 우수할 것
+- 화학적 조성 조절이 우수할 것
+- 필름 스트레스가 작을 것
 
+### Film Stress (응력) 영향
+
+#### 내부 응력
+
+- 박막 증착 시 박막 자체에서 발생하는 응력
+- 박막 증착 시 불순물의 존재
+- 박막 증착 시 박막물이 기판과 충돌
+- 박막 증착 시 팽창 및 수축
+
+#### 외부 응력
+
+- 박막과 기판 사이의 상호작용에 의해 발생
+- 박막과 기판 사이의 열팽창계수차이에 따른 열응력
+- 박막과 기판 간의 상호 확산이나 화학반응에 의해 발생
+
+#### 인장 응력
+
+- 박막이 성장할 때 수축성을 가지면 다시 원복되려는 응력발생
+- 기판 표면은 상대적으로 압축
+- 기판 나머지는 팽창 -> 기판은 전체적으로 팽창하면서 위로 휘어짐
+- 박막의 변화 : 막 주름이나 갈라짐 발생
+
+#### 압축 응력
+
+- 박막이 성장할 때 팽창성을 가지면 다시 원복되려는 응력 발생
+- 기판 표면은 상대적으로 팽창 
