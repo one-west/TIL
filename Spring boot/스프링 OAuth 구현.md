@@ -532,8 +532,6 @@ public User update(String nickname) {
     }
 ```
     
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/9b26350c-aa9b-4c90-88a3-2b752d5d66dd/b9a079a5-2c5b-45f0-a379-e0b970a4296f/Untitled.png)
-    
 ```html
     <!DOCTYPE html>
     <html xmlns:th="http://www.thymeleaf.org">
