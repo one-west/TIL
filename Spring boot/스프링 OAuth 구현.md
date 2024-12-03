@@ -1,4 +1,4 @@
-<img width="825" alt="Untitled (3)" src="https://github.com/user-attachments/assets/22ac5425-32d1-47d4-b412-5968e365c126"><img width="819" alt="Untitled (2)" src="https://github.com/user-attachments/assets/20a09d70-9e58-4bfb-bcf8-c69e76b331fb"># Spring boot OAuth 구현
+# Spring boot OAuth 구현
 
 ## 목차
 
