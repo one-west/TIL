@@ -1,9 +1,11 @@
-# Spring boot OAuth 구현
+<img width="825" alt="Untitled (3)" src="https://github.com/user-attachments/assets/22ac5425-32d1-47d4-b412-5968e365c126"><img width="819" alt="Untitled (2)" src="https://github.com/user-attachments/assets/20a09d70-9e58-4bfb-bcf8-c69e76b331fb"># Spring boot OAuth 구현
 
 ## 목차
 
 1. [OAuth란?](#OAuth란?)
+
 2. [토큰 발급받기](#토큰-발급받기)
+
 3. [SpringSecurity로 OAuth2 적용](#SpringSecurity로-OAuth2-적용)
 
 ## OAuth란?
@@ -11,20 +13,26 @@
 OAuth는 제3의 서비스에 계정 관리를 맡기는 방식 → 네이버로 로그인하기, 구글로 로그인하기
 
 - 리소스 오너 (resource owner) : 자신의 정보를 사용하도록 인증 서버에 허가하는 주체로 서비스를 이용하는 사용자가 리소스 오너에 해당
+
 - 리소스 서버 (resource server) : 리소스 오너의 정보를 가지며, 리소스 오너의 정보를 보호하는 주체를 의미. 네이버, 구글, 페이스북이 리소스 서버에 해당
+
 - 인증 서버 (authorization server) : 클라이언트에게 리소스 오너의 정보에 접근할 수 있는 토큰을 발급하는 역할을 하는 어플리케이션
+
 - 클라이언트 어플리케이션 : 인증 서버에게 인증을 받고 리소스 오너의 리소스를 사용하는 주체를 의미
 
 ### 리소스 오너 정보를 취득하는 4가지 방법
 
 - **권한 부여 코드 승인 타입 (authorization code grant type)** : OAuth2에서 가장 잘 알려진 인증 방법으로 클라이언트가 리소스에 접근하는 데 사용하며, 권한에 접근할 수 있는 코드와 리소스 오너에 대한 액세스 토큰을 발급하는 방식
+
 - 암시적 승인 타입 (implicit grant type) : 서버가 없는 자바스크립트 웹 어플리케이션 클라이언트에서 주로 사용하는 방법으로 클라이언트가 요청을 보내면 리소스 오너의 인증 과정 이외에는 권한 코드 교환 등 별다른 인증 과정을 거치지 않고 액세스 토큰을 제공하는 방식
+
 - 리소스 소유자 암호 자격증명 승인 타입 (resource owner password credentials) : 클라이언트의 패스워드를 이용해서 액세스 토큰에 대한 사용자의 자격 증명을 교환하는 방식
+
 - 클라이언트 자격증명 승인 타입 (client credentials grant) : 클라이언트가 컨텍스트 외부에서 액세스 토큰을 얻어 특정 리소스에 접근을 요청할 때 사용하는 방식
 
 ### 권한 부여 코드 승인 타입
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/9b26350c-aa9b-4c90-88a3-2b752d5d66dd/b6186886-781f-4ffd-b53e-abf0aeacb69b/Untitled.png)
+![권한-부여-흐름도](https://blog.kakaocdn.net/dn/cMaSs8/btsJdFRuOHZ/JGalUKXZakrtYnsak1NIh0/img.png)
 
 ```java
 GET spring-authorization-server.example/authorize?
@@ -35,23 +43,27 @@ client_id=66a33b4c2
 ```
 
 - client_id : 인증 서버가 클라이언트에 할당한 고유 식별자, 이 값은 클라이언트 어플리케이션을 OAuth 서비스에 등록할 때 서비스에서 생성하는 값
+
 - redirect_uri : 로그인 성공시 이동해야 하는 URI
+
 - response_type : 응답 타입, 인증 코드를 받을 때는 code 값을 포함해야 함
+
 - scope : 제공 받고자 하는 리소스 오너의 정보 목록
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/9b26350c-aa9b-4c90-88a3-2b752d5d66dd/df902b11-ee81-4df5-bf35-8572c1b88aae/Untitled.png)
+카카오 : https://developers.kakao.com/docs/latest/ko/kakaologin/rest-api#request-code
 
-[Kakao Developers](https://developers.kakao.com/docs/latest/ko/kakaologin/rest-api#request-code)
+![카카오 OAuth 흐름도](https://github.com/user-attachments/assets/5737a5cb-e48c-4bc7-9477-d3bc4a3f9476)
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/9b26350c-aa9b-4c90-88a3-2b752d5d66dd/b9b84270-7553-4224-81d0-cac931a54cf9/Untitled.png)
+![인가 코드 받기](https://github.com/user-attachments/assets/dafa15cb-709b-4e92-bce5-965eec91168a)
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/9b26350c-aa9b-4c90-88a3-2b752d5d66dd/df289abb-78a8-4393-825b-18a6ef508255/Untitled.png)
+![GET 요청 응답](https://github.com/user-attachments/assets/10788a0b-c854-45a5-8618-10a06fd4ba4b)
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/9b26350c-aa9b-4c90-88a3-2b752d5d66dd/a810388d-07e8-4e4d-a7b9-46925ca12f52/Untitled.png)
+![POST 요청 응답](https://github.com/user-attachments/assets/41f9fb96-8932-4e79-af38-43baab31737b)
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/9b26350c-aa9b-4c90-88a3-2b752d5d66dd/36ba544f-64ef-4615-a195-e8aaafd6cb42/Untitled.png)
+![토큰 받기](https://github.com/user-attachments/assets/7af8e397-54c7-4546-818f-923624aba7ba)
 
 - client_secret : OAuth서비스에 등록할 때 제공받는 비밀키 (옵션)
+
 - grant_type: 권한 유형을 확인하는데 사용 → authorization_code
 
 ### 쿠키
@@ -66,40 +78,67 @@ client_id=66a33b4c2
 
 ** 구글 로그인 캡쳐 화면 **
 
-https://cloud.google.com/cloud-console
-
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/9b26350c-aa9b-4c90-88a3-2b752d5d66dd/7c8e16bd-38ec-4d8d-bb7b-7b819cb8500d/Untitled.png)
-
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/9b26350c-aa9b-4c90-88a3-2b752d5d66dd/d3d11f60-339a-43a7-a682-a32dc2188b5d/Untitled.png)
+구글 클라우드 콘솔 : https://cloud.google.com/cloud-console
 
 - 새 프로젝트 생성
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/9b26350c-aa9b-4c90-88a3-2b752d5d66dd/e2c6c83e-ffbe-4b93-b8d5-02c9619ca783/Untitled.png)
-
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/9b26350c-aa9b-4c90-88a3-2b752d5d66dd/010684b2-4e92-47b9-9a3a-32a6b6bb19eb/Untitled.png)
+![구글 클라우드 콘솔 프로젝트 시작](https://github.com/user-attachments/assets/0f48595d-38ad-47dd-8596-265a30490646)
 
 - API 및 서비스 > 사용자 인증 정보
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/9b26350c-aa9b-4c90-88a3-2b752d5d66dd/ecaa724c-ddbc-41d8-a596-477d57dad415/Untitled.png)
+![API 및 서비스 > 사용자 인증 정보](https://github.com/user-attachments/assets/61f11542-5e5e-4a26-a7b1-b470befc0341)
 
 - 동의화면 구성
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/9b26350c-aa9b-4c90-88a3-2b752d5d66dd/b78d665b-0661-4310-894a-d34d631ea3ff/Untitled.png)
+![동의화면 구성1](https://github.com/user-attachments/assets/24a471ff-5e5a-4896-bfee-d8c8d104772e)
 
-- 외부 선택 후 만들기
+![동의화면 구성2](https://github.com/user-attachments/assets/545d85ff-ac8f-4d10-b8a8-28f09ee8b887)
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/9b26350c-aa9b-4c90-88a3-2b752d5d66dd/f8013e1e-fbc7-4171-908a-33e709e43ee0/Untitled.png)
-
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/9b26350c-aa9b-4c90-88a3-2b752d5d66dd/9e698665-af27-4230-bc81-57c5fc87829d/Untitled.png)
+![동의화면 구성3](https://github.com/user-attachments/assets/22360d1f-0625-48ec-a929-f1fa5cc92fcc)
 
 - 모두 저장 한 후 대시보드로 돌아가기
+
 - 왼쪽 사용자 인증 정보 클릭 > 사용자 인증 정보 만들기
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/9b26350c-aa9b-4c90-88a3-2b752d5d66dd/4d8e5a67-a75d-4388-9f90-ea734ed00135/Untitled.png)
+![OAuth 클라이언트 ID](https://github.com/user-attachments/assets/8b5fa978-53a1-436b-90f8-0d4886288292)
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/9b26350c-aa9b-4c90-88a3-2b752d5d66dd/ff5cc5df-56b1-448b-9f59-c652251d4e6c/Untitled.png)
+![승인된 리다이렉션 URI 등록# 쿠키
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/9b26350c-aa9b-4c90-88a3-2b752d5d66dd/67d83dcf-8cf1-4cf1-b766-91d9f3964715/Untitled.png)
+쿠키란 사용자가 웹 사이트를 방문했을 때 웹사이트가 사용하는 서버에서 사용자의 로컬 환경에 저장하는 작은 데이터를 말한다.
+
+- 이전에 방문한 적이 있는지
+- 로그인을 했다면 정보를 유지할 수 있게 한다.
+- 쿠키는 키와 값으로 이루어져 있으며 만료 기간, 도메인 등의 정보를 가지고 있다.
+
+## 토큰 발급받기
+
+** 구글 로그인 캡쳐 화면 **
+
+구글 클라우드 콘솔 : https://cloud.google.com/cloud-console
+
+- 새 프로젝트 생성
+
+![구글 클라우드 콘솔 프로젝트 시작](https://github.com/user-attachments/assets/0f48595d-38ad-47dd-8596-265a30490646)
+
+- API 및 서비스 > 사용자 인증 정보
+
+![API 및 서비스 > 사용자 인증 정보](https://github.com/user-attachments/assets/61f11542-5e5e-4a26-a7b1-b470befc0341)
+
+- 동의화면 구성
+
+![동의화면 구성1](https://github.com/user-attachments/assets/24a471ff-5e5a-4896-bfee-d8c8d104772e)
+
+![동의화면 구성2](https://github.com/user-attachments/assets/545d85ff-ac8f-4d10-b8a8-28f09ee8b887)
+
+![동의화면 구성3](https://github.com/user-attachments/assets/22360d1f-0625-48ec-a929-f1fa5cc92fcc)
+
+- 모두 저장 한 후 대시보드로 돌아가기
+
+- 왼쪽 사용자 인증 정보 클릭 > 사용자 인증 정보 만들기
+
+![OAuth 클라이언트 ID](https://github.com/user-attachments/assets/8b5fa978-53a1-436b-90f8-0d4886288292)
+
+![승인된 리다이렉션 URI 등록](https://github.com/user-attachments/assets/74493dd0-968a-49a8-88aa-83ec9ff0b448)
 
 - 승인된 리다이렉션 URI : http://localhost:8080/login/oauth2/code/google
 
@@ -119,9 +158,6 @@ security:
 ```
 
 ## SpringSecurity로 OAuth2 적용
-
-> 블로그 API 적용한 프로젝트에 추가  : CH05
-> 
 
 ```java
 implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
@@ -195,22 +231,8 @@ public User update(String nickname) {
     return this;
 }
 ```
-
-> 기존 작성한 [WebSecurityConfig.java](http://WebSecurityConfig.java) 파일 내용 모두 주석
-> 
-- CH09 에서 파일 복사
-    - TokenAuthenticationFilter.java
-    - TokenProvider.java
-    - JwtProperties.java
-    - RefreshToken.java
-    - RefreshTokenRepository.java
-    - TokenApiController.java
-    - TokenService.java
-    - RefreshTokenService.java
-    - CreateAccessTokenRequest.java
-    - CreateAccessTokenResponse.java
     
-    ```java
+```java
     jwt:
       issuer: zesthj@gmail.com
       secret_key: springboot-jwt
@@ -341,9 +363,9 @@ public User update(String nickname) {
                     .toUriString();
         }
     }
-    ```
+```
     
-    ```java
+```java
     package com.example.ch05.config;
     
     import com.example.ch05.config.oauth.OAuth2AuthorizationRequestBasedOnCookieRepository;
@@ -447,9 +469,9 @@ public User update(String nickname) {
             return new BCryptPasswordEncoder();
         }
     }
-    ```
+```
     
-    ```java
+```java
     package com.example.ch05.service;
     
     import com.example.ch05.domain.User;
@@ -508,11 +530,11 @@ public User update(String nickname) {
             return "signup";
         }
     }
-    ```
+```
     
-    ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/9b26350c-aa9b-4c90-88a3-2b752d5d66dd/b9a079a5-2c5b-45f0-a379-e0b970a4296f/Untitled.png)
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/9b26350c-aa9b-4c90-88a3-2b752d5d66dd/b9a079a5-2c5b-45f0-a379-e0b970a4296f/Untitled.png)
     
-    ```html
+```html
     <!DOCTYPE html>
     <html xmlns:th="http://www.thymeleaf.org">
     <head>
@@ -540,9 +562,9 @@ public User update(String nickname) {
     </section>
     </body>
     </html>
-    ```
+```
     
-    ```java
+```java
     const token = searchParam('token');
     if(token) {
         localStorage.setItem("access_token", token);
@@ -550,18 +572,16 @@ public User update(String nickname) {
     function searchParam(key) {
         return new URLSearchParams(location.search).get(key);
     }
-    ```
+```
     
-    ```java
+```java
     <script src="/js/token.js"></script>
     <script src="/js/article.js"></script>
-    ```
+```
     
-    http://localhost:8080/login 
+### 글에 글쓴이 추가하기
     
-    ### 글에 글쓴이 추가하기
-    
-    ```java
+```java
     @Column(name="author")
     private String author;
     
@@ -571,23 +591,23 @@ public User update(String nickname) {
         this.content = content;
         this.author = author;
     }
-    ```
+```
     
-    ```java
+```java
     public Article toEntity(String author) {
         return Article.builder().title(title).content(content).author(author).build();
     }
-    ```
+```
     
-    ```java
+```java
     @PostMapping("/api/articles")
     public ResponseEntity<Article> addArticle(@RequestBody AddArticleRequest request, Principal principal) {
         Article savedArticle = blogService.save(request, principal.getName());
         return ResponseEntity.status(HttpStatus.CREATED).body(savedArticle);
     }
-    ```
+```
     
-    ```java
+```java
     private String authror;
     
     public ArticleViewResponse(Article article) {
@@ -597,21 +617,21 @@ public User update(String nickname) {
         this.createdAt = article.getCreatedAt();
         this.authror = article.getAuthor();
     }
-    ```
+```
     
-    ```java
+```java
     INSERT INTO ARTICLE (title, content, author, created_at, updated_at) VALUES ('제목1', '내용 1','user1', NOW(), NOW());
     INSERT INTO ARTICLE (title, content, author, created_at, updated_at) VALUES ('제목2', '내용 2','user2', NOW(), NOW());
     INSERT INTO ARTICLE (title, content, author, created_at, updated_at) VALUES ('제목3', '내용 3','user3', NOW(), NOW());
     INSERT INTO ARTICLE (title, content, author, created_at, updated_at) VALUES ('제목4', '내용 4','user4', NOW(), NOW());
     INSERT INTO ARTICLE (title, content, author, created_at, updated_at) VALUES ('제목5', '내용 5','user5', NOW(), NOW());
-    ```
+```
     
-    ```java
+```java
     <div class="text-muted fst-italic mb-2" th:text="|Posted on ${#temporals.format(article.createdAt, 'yyyy-MM-dd HH:mm')} By ${article.authror}|" />
-    ```
+```
     
-    ```java
+```java
     const deleteButton = document.getElementById("delete-btn");
     
     if(deleteButton) {
@@ -740,6 +760,4 @@ public User update(String nickname) {
       });
       return result;
     }
-    ```
-    
-    등록 / 수정 / 삭제 에 모두 Authorization 헤더 추가 하기
+```
