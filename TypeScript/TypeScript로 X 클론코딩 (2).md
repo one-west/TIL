@@ -1,6 +1,6 @@
 # TypeScript로 X(구: 트위터) 클론 코딩하기 (2)
 
-[~ Firebase로 로그인 구현에서 이어짐](https://github.com/one-west/TIL/blob/main/TypeScript/Firebase%EB%A5%BC%20%EC%A0%81%EC%9A%A9%ED%95%98%EC%97%AC%20%EB%A1%9C%EA%B7%B8%EC%9D%B8.md)
+[~ Firebase로 로그인 구현에서 이어짐](https://github.com/one-west/TIL/blob/main/TypeScript/TypeScript%EB%A1%9C%20X%20%ED%81%B4%EB%A1%A0%EC%BD%94%EB%94%A9%20(1).md)
 
 ## Loading Screen 구현
 
