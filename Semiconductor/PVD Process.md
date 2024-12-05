@@ -40,7 +40,7 @@
 
 - Metal (Al, 알루미늄) : 주로 배선을 형성하는 금속으로 Sputtering 방식에 의해 증착
 
-|구분|PVD (Physicla Vapor Deposition) |CVD (Chemical Vapor Deposition)|
+|구분|PVD (Physical Vapor Deposition) |CVD (Chemical Vapor Deposition)|
 |--|--|--|
 |정의|고체 상태의 물질을 기화시켜 증기 상태로 만든 후, 기판에 증착하여 박막을 형성하는 공정|기체 상태의 화학 반응을 이용해 고체 박막을 기판에 증착하는 공정|
 |종류|스퍼터링(Sputtering)|LPCVD (Low Pressure CVD)|
