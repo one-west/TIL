@@ -48,10 +48,17 @@
 - [스프링 REST API](https://github.com/one-west/TIL/blob/main/Spring%20boot/%EC%8A%A4%ED%94%84%EB%A7%81%20REST%20API.md)
 - [스프링 Application 설정 및 검사](https://github.com/one-west/TIL/blob/main/Spring%20boot/%EC%8A%A4%ED%94%84%EB%A7%81%20%20Application%20%EC%84%A4%EC%A0%95%20%EB%B0%8F%20%EA%B2%80%EC%82%AC.md)
 - [스프링 시큐리티](https://github.com/one-west/TIL/blob/main/Spring%20boot/%EC%8A%A4%ED%94%84%EB%A7%81%20%EC%8B%9C%ED%81%90%EB%A6%AC%ED%8B%B0.md)
+- [스프링 JWT](https://github.com/one-west/TIL/blob/main/Spring%20boot/%EC%8A%A4%ED%94%84%EB%A7%81%20JWT.md)
+- [스프링 OAuth 구현](https://github.com/one-west/TIL/blob/main/Spring%20boot/%EC%8A%A4%ED%94%84%EB%A7%81%20OAuth%20%EA%B5%AC%ED%98%84.md)
+- [스프링 MyBatis](https://github.com/one-west/TIL/blob/main/Spring%20boot/%EC%8A%A4%ED%94%84%EB%A7%81%20MyBatis.md)
 
 ### JPA
 - [JPA 소개](https://github.com/one-west/TIL/blob/main/JPA/JPA%20%EC%86%8C%EA%B0%9C.md)
 - [JPA 프로젝트 구성](https://github.com/one-west/TIL/blob/main/JPA/JPA%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EA%B5%AC%EC%84%B1.md)
+- [JPA 영속성 관리](https://github.com/one-west/TIL/blob/main/JPA/JPA%20%EC%98%81%EC%86%8D%EC%84%B1%20%EA%B4%80%EB%A6%AC.md)
+- [JPA 엔티티 매핑](https://github.com/one-west/TIL/blob/main/JPA/JPA%20%EC%97%94%ED%8B%B0%ED%8B%B0%20%EB%A7%A4%ED%95%91.md)
+- [JPA 연관관계 매핑(1)](https://github.com/one-west/TIL/blob/main/JPA/JPA%20%EC%97%B0%EA%B4%80%EA%B4%80%EA%B3%84%20%EB%A7%A4%ED%95%911.md)
+- [JPA 연관관계 매핑(2)](https://github.com/one-west/TIL/blob/main/JPA/JPA%20%EC%97%B0%EA%B4%80%EA%B4%80%EA%B3%84%20%EB%A7%A4%ED%95%912.md)
 
 ### HTML-CSS
 - [CSS3 Flex Guide](https://github.com/one-west/TIL/blob/main/CSS/Flex%20Guide.md)
