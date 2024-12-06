@@ -5,6 +5,7 @@
 - [상속 관계 매핑](#상속-관계-매핑)
 - [@MappedSuperClass](#@MappedSuperClass)
 - [복합 키와 식별 관계 매핑](#복합-키와-식별-관계-매핑)
+- [조인 테이블](#조인-테이블)
 
 ## 상속 관계 매핑
 
@@ -683,7 +684,7 @@ public class GrandChildId implements Serializable {
 - 특이점은 @Id 대신 @MapsId를 사용
 - @MapsId 는 외래키와 매핑한 연관관계를 기본키에도 매핑하겠다는 뜻
 
-### 조인 테이블
+## 조인 테이블
 
 데이터베이스 테이블의 연관관계를 설계하는 방법은 크게 2가지
 
