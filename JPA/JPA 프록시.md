@@ -5,7 +5,7 @@
 - [프록시(Proxy)](#프록시(Proxy))
 - [즉시 로딩과 지연 로딩](#즉시-로딩과-지연-로딩)
 - [지연 로딩 활용](#지연-로딩-활용)
-- [영속성 전이 : CASCADE](#영속성-전이-:-CASCADE)
+- [영속성 전이 : CASCADE](#영속성-전이:CASCADE)
 - [고아 객체](#고아-객체)
 
 ## 프록시(Proxy)
@@ -785,4 +785,8 @@ public static void saveAndRemoveWithCascade(EntityManager em) {
 - 특정 엔티티가 개인 소유일 때
 - @OneToOne, @OneToMany 일때만 사용
 
-### 학습출처
+### 학습 출처
+
+- Java ORM 표준 JPA 프로그래밍 [김영한]
+
+- 스프링 부트 3 벡엔드 개발자 되기 [신성영]
