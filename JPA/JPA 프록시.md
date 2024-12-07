@@ -3,6 +3,10 @@
 ## 목차
 
 - [프록시(Proxy)](#프록시(Proxy))
+- [즉시 로딩과 지연 로딩](#즉시-로딩과-지연-로딩)
+- [지연 로딩 활용](#지연-로딩-활용)
+- [영속성 전이 : CASCADE](#영속성-전이-:-CASCADE)
+- [고아 객체](#고아-객체)
 
 ## 프록시(Proxy)
 
@@ -244,13 +248,15 @@ System.out.println(team.getClass().getName());
 //org.example.Team$HibernateProxy$ixMBWqaO
 ```
 
-## 3. 지연 로딩 활용
+## 지연 로딩 활용
 
 ![image](https://github.com/user-attachments/assets/0f976640-d463-475a-8821-60879ad017a6)
 
 - 회원은 팀 하나에만 소속될 수 있다 (N:1)
 - 회원은 여러 주문 내역을 가진다. (1:N)
 - 주문 내역은 상품 정보를 가진다. (N:1)
+
+<br>
 
 - Member와  Team 은 자주 함께 사용되어 즉시 로딩으로 설정
 - Member와 연관된 Order는 가끔 사용되어 지연 로딩으로 설정
@@ -541,33 +547,33 @@ select
         orders0_.member_id=?
 ```
 
-### 3.1 컬렉션 래퍼
+### 컬렉션 래퍼
 
 - 컬렉션 래퍼 : 하이버네이트 엔티티를 영속 상태로 만들 때 엔티티에 컬렉션이 있으면 컬렉션을 추적하고 관리할 목적으로 원본 컬렉션을 하이버네이트가 제공하는 내장 컬렉션으로 변경 → 컬렉션 래퍼
 - orders = org.hibernate.collection.internal.PersistentBag
-- 엔티티를 지연 로딩하면 프록시 객체를 이용해서 지연 로딩을 수행하지만 주문 내역 같은 컬렉션은 컬렉션 래퍼가 지연 로딩을 처리해 준다.
-- member.getOrders()를 호출해도 컬렉션은 초기화 되지 않는다. member.getOrders().get(0) 처럼 컬렉션에서 실제 데이터를 조회할 때 데이터베이스를 조회해서 초기화한다.
+- 엔티티를 지연 로딩하면 프록시 객체를 이용해서 지연 로딩을 수행하지만 주문 내역 같은 컬렉션은 컬렉션 래퍼가 지연 로딩을 처리해줌
+- member.getOrders()를 호출해도 컬렉션은 초기화 되지 않는다. member.getOrders().get(0) 처럼 컬렉션에서 실제 데이터를 조회할 때 데이터베이스를 조회해서 초기화
 
-### 3.2 JPA 기본 fetch 전략
+### JPA 기본 fetch 전략
 
-- @ManyToOne, @OneToOne : 즉시 로딩 (FetchType.EAGER)
-- @OneToMany, @ManyToMany : 지연 로딩 (FetchType.LAZY)
+#### @ManyToOne, @OneToOne : 즉시 로딩 (FetchType.EAGER)
+#### @OneToMany, @ManyToMany : 지연 로딩 (FetchType.LAZY)
 
-JPA 의 기본 fetch 전략은 연관된 엔티티가 하나면 즉시 로딩을, 컬렉션이면 지연 로딩을 사용한다.
+- JPA 의 기본 fetch 전략은 연관된 엔티티가 하나면 즉시 로딩을, 컬렉션이면 지연 로딩을 사용
 
-- 즉시 로딩의 문제 : 컬렉션을 로딩하는 것은 비용이 많이 들고 잘못하면 너무 많은 테이블을 로딩할 수 있다.
+- 즉시 로딩의 문제 : 컬렉션을 로딩하는 것은 비용이 많이 들고 잘못하면 너무 많은 테이블을 로딩할 수 있음
 
-> 추천하는 방법 : **모든 연관관계에 지연 로딩을 사용** 하고 개발 완료 단계에 왔을 때 실제 사용하는 상황을 보고 꼭 필요한 곳에만 즉시 로딩을 사용하도록 최적화 한다.
-> 
+> 추천하는 방법 : **모든 연관관계에 지연 로딩을 사용** 하고 개발 완료 단계에 왔을 때 실제 사용하는 상황을 보고 꼭 필요한 곳에만 즉시 로딩을 사용하도록 최적화
 
-### 3.3 컬렉션에 FetchType.EAGER 사용 시 주의점
+### 컬렉션에 FetchType.EAGER 사용 시 주의점
 
-- 컬렉션을 하나 이상 즉시 로딩하는 것은 권장하지 않는다.
+- 컬렉션을 하나 이상 즉시 로딩하는 것은 권장하지 않음
     - 컬렉션과 조인한다는 것은 데이터베이스 테이블로 보면 일대다 조인 → 일대다 조인은 결과 데이터가 다 쪽에 있는 수 만큼 증가
-    - 문제는 서로 다른 컬렉션을 2개 이상 조인할 때 발생 → 예를 들어 A 테이블을 N, M 두 테이블과 일대다 조인하면 SQL  실행 결과가 N * M 이 되면서 너무 많은 데이터를 반환할 수 있고, 어플리케이션 성능이 저하될 수 있다.
-- 컬렉션 즉시 로딩은 항상 외부 조인(OUTER JOIN)을 사용한다.
-    - 다대일 관계인 회원테이블과 팀 테이블을 조인할 때 회원 테이블의 외래 키에 not null 제약조건을 걸어두면 모든 회원은 팀에 소속 되므로 항상 내부 조인 (INNER JOIN) 을 사용해도 된다.
-    - 반대로 팀 테이블에서 회원 테이블로 일대다 관계를 조인할 때 회원이 한명도 없는 팀을 내부 조인하면 팀까지 조회 되지 않는 문제가 발생한다.
+    - 문제는 서로 다른 컬렉션을 2개 이상 조인할 때 발생 → 예를 들어 A 테이블을 N, M 두 테이블과 일대다 조인하면 SQL  실행 결과가 N * M 이 되면서 너무 많은 데이터를 반환할 수 있고, 어플리케이션 성능이 저하될 수 있음
+
+- 컬렉션 즉시 로딩은 항상 외부 조인(OUTER JOIN)을 사용
+    - 다대일 관계인 회원테이블과 팀 테이블을 조인할 때 회원 테이블의 외래 키에 not null 제약조건을 걸어두면 모든 회원은 팀에 소속 되므로 항상 내부 조인 (INNER JOIN) 을 사용해도 됨
+    - 반대로 팀 테이블에서 회원 테이블로 일대다 관계를 조인할 때 회원이 한명도 없는 팀을 내부 조인하면 팀까지 조회 되지 않는 문제가 발생
         
         ```java
         Team team2 = new Team();
@@ -579,17 +585,17 @@ JPA 의 기본 fetch 전략은 연관된 엔티티가 하나면 즉시 로딩을
         INNER JOIN MEMBER M ON T.id = M.TEAM_ID
         ```
         
-        ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/9b26350c-aa9b-4c90-88a3-2b752d5d66dd/94a62706-cb26-4ecc-b6c4-078953640251/Untitled.png)
-        
-        ![Screenshot 2023-11-14 at 10.26.11 PM.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/9b26350c-aa9b-4c90-88a3-2b752d5d66dd/fda1f5d4-c5ac-494a-b318-1ed4a25b201d/Screenshot_2023-11-14_at_10.26.11_PM.png)
-        
+        ![image](https://github.com/user-attachments/assets/95e4bfd6-ef25-44ed-9f0d-6efcf6d27ce4)
+
+        ![image](https://github.com/user-attachments/assets/8b793306-c948-43c8-a15b-6a1c7307a8a5)
+
     - 이러한 상황 때문에 JPA 는 일대다 관계를 즉시 로딩할 때 항상 외부 조인을 사용한다.
 
 | @ManyToOne, @OneToOne | optional = false : 내부조인 | optional = true : 외부 조인 |
 | --- | --- | --- |
 | @OneToMany, @ManyToMany | optional = false : 외부조인 | optional = true : 내부 조인 |
 
-## 4. 영속성 전이 : CASCADE
+## 영속성 전이 : CASCADE
 
 특정 엔티티를 영속 상태로 만들 때 연관된 엔티티도 함께 영속 상태로 만들고 싶은면 영속성 전이 (transitive persistence) 기능을 사용하면 된다. → JPA 는 CASCADE 옵션으로 영속성 전이를 제공
 
@@ -686,20 +692,20 @@ public static void saveNoCascade(EntityManager em) {
 }
 ```
 
-- JPA 에서 엔티티를 저장할 때 연관된 모든 엔티티는 영속 상태여야 한다.
+- JPA 에서 엔티티를 저장할 때 연관된 모든 엔티티는 영속 상태여야 함
 
-### 4.1 영속성 전이 : 저장
+### 영속성 전이 : 저장
 
 ```java
 @OneToMany(mappedBy = "parent", cascade = CascadeType.PERSIST)
 private List<Child> children = new ArrayList<>();
 ```
 
-- 영속성 전이는 연관관계를 매핑하는 것과는 아무 관련이 없다.
+- 영속성 전이는 연관관계를 매핑하는 것과는 아무 관련이 없음
 
 ### 4.2 영속성 전이 : 삭제
 
-방금 저장한 부모 자식 엔티티를 모두 제거하려면 각각의 엔티티를 하나씩 제거해야 한다.
+방금 저장한 부모 자식 엔티티를 모두 제거하려면 각각의 엔티티를 하나씩 제거해야 함
 
 ```java
 public static void removeNoCascade(EntityManager em) {
@@ -714,8 +720,8 @@ public static void removeNoCascade(EntityManager em) {
 }
 ```
 
-- DELETE SQL 을 3번 실행하면서 부모와 자식을 삭제한다.
-- 삭제 순서는 외래 키 제약조건을 고려해서 자식을 먼저 삭제하고 부모를 삭제한다.
+- DELETE SQL 을 3번 실행하면서 부모와 자식을 삭제
+- 삭제 순서는 외래 키 제약조건을 고려해서 자식을 먼저 삭제하고 부모를 삭제
 
 ```java
 public static void removeWithCascade(EntityManager em) {
@@ -727,7 +733,7 @@ public static void removeWithCascade(EntityManager em) {
 
 - CascadeType.REMOVE 를 설정하지 않고 실행하면 외래키 제약조건으로 예외 발생
 
-### 4.3 CASCADE 종류
+### CASCADE 종류
 
 ```java
 public enum CascadeType {
@@ -743,11 +749,11 @@ public enum CascadeType {
 casecade = {CascadeType.PERSISTE, CascadeType.REMOVE}
 ```
 
-## 5. 고아 객체
+## 고아 객체
 
-고아 객체 (ORPHAN) 제거 : 부모 엔티티와 연관관계가 끊어진 자식 엔티티를 자동으로 삭제하는 기능 
+- 고아 객체 (ORPHAN) 제거 : 부모 엔티티와 연관관계가 끊어진 자식 엔티티를 자동으로 삭제하는 기능 
 
-이 기능을 사용하여 부모 엔티티의 컬렉션에서 자식 엔티티의 참조만 제거하면 자식 엔티티가 자동으로 삭제되도록 할 수 있다.
+- 이 기능을 사용하여 부모 엔티티의 컬렉션에서 자식 엔티티의 참조만 제거하면 자식 엔티티가 자동으로 삭제되도록 할 수 있음
 
 ```java
 @OneToMany(mappedBy = "parent", cascade = CascadeType.ALL, orphanRemoval = true)
@@ -778,3 +784,5 @@ public static void saveAndRemoveWithCascade(EntityManager em) {
 - 참조하는 곳이 하나일때 사용해야 함
 - 특정 엔티티가 개인 소유일 때
 - @OneToOne, @OneToMany 일때만 사용
+
+### 학습출처
