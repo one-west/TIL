@@ -3,7 +3,7 @@
 ## 목차
 - [객체지향 쿼리 소개](#객체지향-쿼리-소개)
 - [JPQL](#JPQL)
-- [QueryDSL](#QueryDSL)
+- [QueryDSL](#querydsl-1)
 
 ## 객체지향 쿼리 소개
 
