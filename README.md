@@ -90,6 +90,7 @@
 - [Next 렌더링 전략](https://github.com/one-west/TIL/blob/main/Next.js/Next%20%EB%A0%8C%EB%8D%94%EB%A7%81%20%EC%A0%84%EB%9E%B5.md)
 - [Next 동적라우팅](https://github.com/one-west/TIL/blob/main/Next.js/Next%20%EB%8F%99%EC%A0%81%EB%9D%BC%EC%9A%B0%ED%8C%85.md)
 - [Next 이미지 컴포넌트](https://github.com/one-west/TIL/blob/main/Next.js/Next%20Image%20Component.md)
+- [Next Props Drilling](https://github.com/one-west/TIL/blob/main/Next.js/Next%20Props%20Drilling.md)
 
 ### Computer Network
 - [WWW이란?](https://github.com/one-west/TIL/blob/main/Computer%20Network/WWW.md)
