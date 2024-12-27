@@ -28,7 +28,7 @@
 
 ![Prop Drilling](https://camo.githubusercontent.com/4ac4257da5fd712840df56fa36fd0ec439e35a166439778ee7a6042cf057bfc2/68747470733a2f2f626c6f672e6a6f7368736f6674776172652e636f6d2f77702d636f6e74656e742f75706c6f6164732f323032342f30352f70726f702d6472696c6c696e672d76732e2d72656163742d636f6e746578742e6a70673f773d31303234)
 
-## Prop drilling 해결하는 방법
+## Prop Drilling 해결하는 방법
 
 ### Context API
 
@@ -180,3 +180,11 @@ export default function RootLayout(props: { children: React.ReactNode }) {
     - 추가 라이브러리 필요
 
     - 작은 애플리케이션에는 과한 설정
+
+### 학습출처
+
+-[교재] 실전에서 바로 쓰는 Next.js [저자] : 미셸 리바 (Michele Riva)
+
+- https://nextjs.org/
+
+- https://velog.io/@rachel28/Prop-Drilling#prop-drilling-%ED%95%B4%EA%B2%B0%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95
